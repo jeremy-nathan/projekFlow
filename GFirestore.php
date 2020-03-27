@@ -8,7 +8,7 @@ class Firestore{
 
     protected $db;
     protected $name;
-
+    
     public function __construct(string $collection){
         $this->db = new FirestoreClient([
             'projectId'=> 'fir-php-4bdd0'
@@ -47,10 +47,10 @@ class Firestore{
 
     // Creates a document in the specified collection at root level. If $data is empty (by default), a null document is created. 
     // Else, a document will be created along with its data
-    public function createDocument(string $collectionName='eventManage',string $name,array $data=[]){
+    public function createDocument(string $name,array $data=[]){
         try {
-            if(!($this->db->collection($collectionName)->document($name)->snapshot()->exists())){
-                    $this->db->collection($collectionName)->document($name)->set($data);
+            if(!($this->db->collection($this->name)->document($name)->snapshot()->exists())){
+                    $this->db->collection($this->name)->document($name)->set($data);
                     return true;       
         }
             else{
@@ -64,7 +64,7 @@ class Firestore{
     }
 
     // Updates field values, and if the field doesn't exist, it will be created in the document.
-    public function updateDocument($docName,array $newData){
+    public function updateDocument(string $docName,array $newData){
 
         try {
             if($this->db->collection($this->name)->document($docName)->snapshot()->exists()){
@@ -81,6 +81,8 @@ class Firestore{
 
     }
         // Creates a collection
+        // May consider removing cuz now GFirestore object being standardized 
+        // to layan one object.
         public function createCollection(string $name,string $doc_name,array $data=[]){
         try {
             $this->db->collection($name)->document($doc_name)->create($data);
