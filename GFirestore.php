@@ -80,19 +80,6 @@ class Firestore{
         }
 
     }
-        // Creates a collection
-        // May consider removing cuz now GFirestore object being standardized 
-        // to layan one object.
-        public function createCollection(string $name,string $doc_name,array $data=[]){
-        try {
-            $this->db->collection($name)->document($doc_name)->create($data);
-            return true;
-        } 
-        catch (Exception $exception) {
-            return $exception->getMessage();
-            }
-        }
-
 
         public function createSubCollection(string $name,string $doc_name,string $sub_doc,array $data=[]){
             try {
@@ -161,15 +148,20 @@ class Firestore{
         }
 
         // Retrieves field values in a document
-        public function retrieveField(string $docName){
+        // Most redundant function ever, but kinda useful in a way...eventually
+        public function retrieveField(string $docName,string $field){
             try {
-                if ($this->db->collection($this->name)->document($docName)->snapshot()->exists()) {
-                    
-                }
-            } 
-            catch (Exception $exception) {
-                return $exception;
+                if($this->db->collection($this->name)->document($docName)->snapshot()->exists()){
+                    $result= ($this->db->collection($this->name)->document($docName)->snapshot()->data());
+                    return $result[$field];
             }
-        }
+            else{
+                throw new Exception('Document not found.');
+            }
+
+            } catch (Exception $exception) {
+                return $exception->getMessage();
+            }
+            }
 
 }

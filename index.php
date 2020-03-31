@@ -13,7 +13,6 @@ $fs=new Firestore('eventManage');
 // $food=$favourites["food"];
 // echo ($arr);
 
-$fs->createCollection("Users","Jeremy");
 
 ?>
 
