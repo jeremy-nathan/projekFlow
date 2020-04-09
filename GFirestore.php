@@ -162,6 +162,21 @@ class Firestore{
             } catch (Exception $exception) {
                 return $exception->getMessage();
             }
-            }
+        }
 
-}
+        public function getAllDocuments(array $data=[]){
+                
+                $documents = $this->db->collection($this->name)->documents();
+                foreach ($documents as $document) {
+                    if ($document->exists()) {
+                        $a=array();
+                        array_push($a,$document->data());
+                    } else {
+                        printf('Document %s does not exist!' . PHP_EOL, $snapshot->id());
+                    }
+                }
+                array_push($data,$a);
+                return $data;
+            }
+        }
+
