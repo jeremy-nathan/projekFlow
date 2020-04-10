@@ -14,6 +14,8 @@ $fs=new Firestore('eventManage');
 // echo ($arr);
 $arr = $fs->getAllDocuments();
 
+// echo ($arr[0][documentPosition][fieldName])
+// if fieldName is another array, then : echo ($arr[0][documentPosition][fieldName][subFieldName])
 echo($arr[0][1]['citizens']);
 
 
