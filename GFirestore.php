@@ -164,12 +164,12 @@ class Firestore{
             }
         }
 
-        public function getAllDocuments(array $data=[]){
+        public function getAllDocuments(array $data=[],$a=array()){
                 
                 $documents = $this->db->collection($this->name)->documents();
                 foreach ($documents as $document) {
                     if ($document->exists()) {
-                        $a=array();
+                        
                         array_push($a,$document->data());
                     } else {
                         printf('Document %s does not exist!' . PHP_EOL, $snapshot->id());

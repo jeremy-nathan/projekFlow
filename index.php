@@ -14,6 +14,6 @@ $fs=new Firestore('eventManage');
 // echo ($arr);
 $arr = $fs->getAllDocuments();
 
-echo ($arr['cit']);
+echo($arr[0][1]['citizens']);
 
 
