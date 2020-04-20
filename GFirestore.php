@@ -32,6 +32,35 @@ class Firestore{
 
     }
 
+    public function getAllDocuments(){
+
+        $arr=[];
+        $docs=$this->db->collection($this->name)->documents()->rows();
+        if(!empty($docs)){
+            foreach($docs as $value){
+                $arr[]=$value->data();
+            }
+        }
+        return $arr;
+    }
+
+
+    // for compound queries
+    public function getCompositeWhere(string $f1,string $f2,string $op1,string $op2,$val1,$val2){
+        $arr=[];
+        $query=$this->db->collection($this->name)
+                ->where($f1,$op1,$val1)
+                ->where($f2,$op2,$val2)
+                ->documents()
+                ->rows();
+        if(!empty($query)){
+            foreach ($query as $value){
+                $arr[] = $value->data();
+            }
+        }
+        return $arr;
+    }
+
     // Don't know why i created this in the first place :)
     public function getWhere(string $field, string $operator, $value)
     {
@@ -164,19 +193,5 @@ class Firestore{
             }
         }
 
-        public function getAllDocuments(array $data=[],$a=array()){
-                
-                $documents = $this->db->collection($this->name)->documents();
-                foreach ($documents as $document) {
-                    if ($document->exists()) {
-                        
-                        array_push($a,$document->data());
-                    } else {
-                        printf('Document %s does not exist!' . PHP_EOL, $snapshot->id());
-                    }
-                }
-                array_push($data,$a);
-                return $data;
-            }
         }
 
