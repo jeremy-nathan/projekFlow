@@ -7,6 +7,8 @@ error_reporting(0);
 
 $fs=new Firestore('eventManage');
 
+$event=new Firestore('event');
+
 $venue=new Firestore('venues');
 // print_r($fs->getDocument('cities'));
 // path is the fieldname, value is the value of the field
@@ -23,9 +25,32 @@ $venue=new Firestore('venues');
 
 // $category=$_POST["category"]="All";
 // $max=$_POST["max"]=0;
+
+$dataa=[];
+
+if(isset($_POST["create"])){
+
+    $startdate=$_POST["startdate"];
+    $enddate=$_POST["enddate"];
+    $eventname=$_POST["eventname"];
+    $venuecategory=$_POST["venuecategory"];
+    $equipment=$_POST["equipment"];
+    $numOfParticipants=$_POST["numOfParticipants"];
+
+    $dataa=[
+        "StartDate"=>date_create("$startdate 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
+        "EndDate"=>date_create("$enddate 23:59:59",timezone_open("Asia/Kuala_Lumpur")),
+        "EventName"=>$eventname,
+        "Category"=>$venuecategory,
+        "SpecialEquipment"=>$equipment,
+        "NumberOfParticipants"=>(int)$numOfParticipants
+    ];
+    $event->createDocument($eventname,$dataa);
+}
+
 $result=[];
 
-if(isset($_POST["submit"])){
+if(!empty($_POST["submit"])){
     $category=$_POST["category"];
     $max=$_POST["max"];
 
@@ -46,6 +71,8 @@ if(isset($_POST["submit"])){
     $result[]=$venue->getAllDocuments();
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>

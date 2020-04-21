@@ -37,3 +37,24 @@ Array
         )
 
 )
+
+
+
+
+$startdate=$_POST["startdate"];
+$enddate=$_POST["enddate"];
+$eventname=$_POST["eventname"];
+$venuecategory=$_POST["venuecategory"];
+$equipment=$_POST["equipment"];
+$numOfParticipants=$_POST["numOfParticipants"];
+
+$data=[
+    "StartDate"=>date_create("$startdate",timezone_open("Asia/Kuala_Lumpur")),
+    "EndDate"=>date_create($enddate,timezone_open("Asia/Kuala_Lumpur")),
+    "EventName"=>$eventname,
+    "Category"=>$venuecategory,
+    "SpecialEquipment"=>$equipment,
+    "NumberOfParticipants"=>(int)$numOfParticipants
+];
+
+$event->createDocument($eventname,$data);

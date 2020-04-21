@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -30,34 +35,65 @@
                 <div class="card">
                     <div class="card-body shadow">
                         <h2 class="text-center card-title" style="margin-bottom: 20px;">New Booking</h2>
-                        <form>
+                        <form action="listofvenues.php" method="POST">
                             <div class="form-group">
                                 <div class="form-row row-cols-2 justify-content-center" style="margin-bottom:15px;">
-                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3"><label class="col-form-label">Start Date</label></div>
-                                    <div class="col-8 col-md-6 col-lg-8"><input class="form-control" type="date"></div>
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">Start Date</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8">
+                                        <input name="startdate" class="form-control" type="date">
+                                    </div>
                                 </div>
                                 <div class="form-row justify-content-center" style="margin-bottom: 15px;">
-                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3"><label class="col-form-label">End Date</label></div>
-                                    <div class="col-8 col-md-6 col-lg-8"><input class="form-control" type="date"></div>
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">End Date</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8">
+                                        <input name="enddate" class="form-control" type="date">
+                                    </div>
                                 </div>
                                 <div class="form-row justify-content-center" style="margin-bottom: 15px;">
-                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3"><label class="col-form-label">Event Name</label></div>
-                                    <div class="col-8 col-md-6 col-lg-8"><input class="form-control" type="text"></div>
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">Event Name</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8">
+                                        <input name="eventname" class="form-control" type="text">
+                                    </div>
                                 </div>
                                 <div class="form-row justify-content-center" style="margin-bottom: 15px;">
-                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3"><label class="col-form-label">Venue Type</label></div>
-                                    <div class="col-8 col-md-6 col-lg-8"><select class="form-control"><option value="" selected="">Choose a venue type</option><option value="Multipurpose Hall">Multipurpose Hall</option><option value="Multipurpose Room">Multipurpose Room</option><option value="Dewan Tunku Canselor">Dewan Tunku Canselor</option></select></div>
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">Venue Category</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8">
+                                        <select name="venuecategory" class="form-control">
+                                            <option value="" selected="">Choose a venue category</option>
+                                            <option value="Multipurpose Hall">Multipurpose Hall</option>
+                                            <option value="Multipurpose Room">Multipurpose Room</option>
+                                            <option value="Dewan Tunku Canselor">Dewan Tunku Canselor</option>
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="form-row justify-content-center" style="margin-bottom: 15px;">
-                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3"><label class="col-form-label">Special Equipment</label></div>
-                                    <div class="col-8 col-md-6 col-lg-8 align-self-center"><input class="form-control" type="text"></div>
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">Special Equipment</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8 align-self-center">
+                                        <input name="equipment" class="form-control" type="text">
+                                    </div>
                                 </div>
                                 <div class="form-row justify-content-center" style="margin-bottom: 15px;">
-                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3"><label class="col-form-label">Number of Participants</label></div>
-                                    <div class="col-8 col-md-6 col-lg-8 align-self-center"><input class="form-control" type="number"></div>
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">Number of Participants</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8 align-self-center">
+                                        <input name="numOfParticipants" class="form-control" type="number">
+                                    </div>
                                 </div>
                                 <div class="form-row justify-content-center align-items-center" style="margin-bottom: 15px;">
-                                    <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4"><button class="btn btn-success btn-block" type="submit">Book</button></div>
+                                    <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                                        <button name="create" class="btn btn-success btn-block" type="submit">Create</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>
