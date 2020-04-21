@@ -142,8 +142,7 @@ if(isset($_POST["submit"])){
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary float-right" type="submit" value='.$data["Name"].'
-                            style="border-radius: 30px;">Book</button>
+                        <button class="btn btn-primary float-right" name="book" type="submit" value="'.$data["Name"].'" formmethod="GET" formaction="details.php" style="border-radius: 30px;">Book</button>
                     </div>
                 </div>
             </div>';
