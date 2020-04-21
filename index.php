@@ -2,6 +2,7 @@
 
 require_once './GFirestore.php';
 
+// Disable notices. No errors will be displayed on the web page
 error_reporting(0);
 
 $fs=new Firestore('eventManage');
@@ -24,23 +25,26 @@ $venue=new Firestore('venues');
 // $max=$_POST["max"]=0;
 $result=[];
 
-// $category=$max="";
-// if($category=="All" && $max==0){
-//     $result[]=$venue->getAllDocuments();
-// }
-// else{
-//     $result[]=$venue->getCompositeWhere("Category","MaxCapacity","==","<=","Multipurpose Hall",10000);
-// }
-
 if(isset($_POST["submit"])){
     $category=$_POST["category"];
     $max=$_POST["max"];
-    if ($category<>"All" || $max<>"0") {
-        $result[]=$venue->getCompositeWhere("Category","MaxCapacity","==","<=",$category,(int)$max);
-} else {
-    $result[]=$venue->getAllDocuments();
-}
 
+    // Queries Firestore for both "Category" and "MaxCapacity" inputted by user
+    if ($category<>"All" && (int)$max<>0) {
+        $result[]=$venue->getCompositeWhere("Category","MaxCapacity","==","<=",$category,(int)$max);
+    }
+    // Only queries Firestore for "Category"
+    elseif($category<>"All"){
+        $result[]=$venue->getWhere("Category","==",$category);
+    }
+    // Only queries FIrestore for the maximum capacity of the venue
+    elseif((int)$max<>0){
+        $result[]=$venue->getWhere("MaxCapacity","<=",(int)$max);
+    }
+    // Displays all venues
+    else{
+    $result[]=$venue->getAllDocuments();
+    }
 }
 ?>
 
