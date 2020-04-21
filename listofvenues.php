@@ -4,30 +4,14 @@ require_once './GFirestore.php';
 
 // Disable notices. No errors will be displayed on the web page
 error_reporting(0);
-
-$fs=new Firestore('eventManage');
-
+// Event collection
 $event=new Firestore('event');
-
+// Venue collection
 $venue=new Firestore('venues');
-// print_r($fs->getDocument('cities'));
-// path is the fieldname, value is the value of the field
-
-// $arr=($fs->getDocument("room2"))["favorites"]["food"];
-// $favourites=$arr["favorites"]["food"];
-// $food=$favourites["food"];
-// echo ($arr);
-// $arr = $fs->getAllDocuments();
-
-// echo ($arr[0][documentPosition][fieldName])
-// if fieldName is another array, then : echo ($arr[0][documentPosition][fieldName][subFieldName])
-// echo($arr[0][1]['citizens']);
-
-// $category=$_POST["category"]="All";
-// $max=$_POST["max"]=0;
 
 $dataa=[];
 
+// Checks if event has been created
 if(isset($_POST["create"])){
 
     $startdate=$_POST["startdate"];
@@ -45,11 +29,11 @@ if(isset($_POST["create"])){
         "SpecialEquipment"=>$equipment,
         "NumberOfParticipants"=>(int)$numOfParticipants
     ];
+    // Creates a document for the created event
     $event->createDocument($eventname,$dataa);
 }
 
 $result=[];
-
 if(!empty($_POST["submit"])){
     $category=$_POST["category"];
     $max=$_POST["max"];
@@ -70,6 +54,9 @@ if(!empty($_POST["submit"])){
     else{
     $result[]=$venue->getAllDocuments();
     }
+}
+else{
+    $result[]=$venue->getAllDocuments();
 }
 
 
@@ -141,6 +128,7 @@ if(!empty($_POST["submit"])){
     <div class="container" style="margin-bottom: 50px;">
         <div class="row row-cols-sm-1 row-cols-md-4 row-cols-lg-4 row-cols-xl-4 justify-content-sm-center">
             <?php 
+            // Generate venues based on the number of results returned by the query
                 foreach($result[0] as $data){
                     echo '<div class="col-sm-10 col-md-6 col-lg-4 col-xl-4">
                 <div class="card shadow-sm"><img class="card-img-top w-100 d-block" src='.$data["Image"].' style="min-height: 137.484px;max-height: 200px;height: 200px;">
