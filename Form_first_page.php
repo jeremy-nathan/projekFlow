@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <form>
+    <form action="form_second_page.php" method="get">
       <div id ="Header" class="card">
   <div class="card-body">
       <div class="jumbotron jumbotron-fluid">
