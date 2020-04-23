@@ -1,3 +1,39 @@
+<?php
+require_once './GFirestore.php';
+
+// Disable notices. No errors will be displayed on the web page
+error_reporting(0);
+
+$Letter_info = new Firestore('Letter_info');
+
+$data=[];
+
+if(isset($_POST["first_page_info"])){
+  $full_name = $_POST["full_name"];
+  $inputAddress1 = $_POST["inputAddress1"];
+  $inputAddress2 = $_POST["inputAddress2"];
+  $inputCity = $_POST["inputCity"];
+  $inputState = $_POST["inputState"];
+  $inputZip = $_POST["inputZip"];
+  $Date = $_POST["Date"];
+
+  $data = [
+              "Full_Name"=> $full_name,
+              "Address_1"=> $inputAddress1,
+              "Address_2"=> $inputAddress2,
+              "City" => $inputCity,
+              "State" =>$inputState,
+              "Zip_code" =>$inputZip,
+              "Date" => date_create("$Date 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
+  ]
+
+  $Letter_info->createDocument($full_name,$data);
+
+}
+
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -31,13 +67,13 @@
         <div class = "card-body">
       <div class="form-row">
         <div id="first_name" class="form-group col-lg-12">
-          <label for="inputEmail4">Full Name / Association's Name / Club's Name</label>
-          <input type="text" class="form-control" id="inputEmail4">
+          <label for="full_name">Full Name / Association's Name / Club's Name</label>
+          <input type="text" class="form-control" id="full_name">
         </div>
       </div>
       <div id="street_address" class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <label for="inputAddress1">Address</label>
+        <input type="text" class="form-control" id="inputAddress1" placeholder="1234 Main St">
       </div>
       <div id="street_address_2" class="form-group">
         <label for="inputAddress2">Address 2</label>
@@ -76,19 +112,9 @@
       </div>
     <div id="date" class="form-group col-md-4">
       <label for="date">Date : </label>
-      <input type="date" class="form-control" id="birthday" name="birthday">
+      <input type="date" class="form-control" id="Date" name="Date">
     </div>
-
-
-      <!-- <div class="form-group">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      </div> -->
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" id="first_page_info" class="btn btn-primary">Submit</button>
     </form>
   </div>
   </div>
