@@ -1,0 +1,78 @@
+.card{
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 10px;
+  margin-top: 45px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 50px;
+}
+
+.display-4{
+  padding-left: 25px;
+}
+
+.lead{
+  padding-left: 25px;
+}
+
+
+#title{
+  padding-bottom: 20px;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+#title_caption{
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+#body_title{
+  padding-bottom: 20px;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+#body_caption{
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+/* #last_name{
+  padding-bottom: 20px;
+
+} */
+
+
+#submit_button{
+margin-right:750px;
+margin-left:20px;
+margin-bottom: 20px;
+}
+
+#street_address{
+  padding-bottom: 20px;
+}
+
+#street_address_2{
+  padding-bottom: 20px;
+}
+
+#city{
+  padding-right: 20px;
+}
+
+#zip_code{
+  margin-right: 0px;
+}
+
+
+#Header{
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.lead{
+  padding-top: 20px;
+}
