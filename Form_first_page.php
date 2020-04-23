@@ -109,8 +109,8 @@ if(isset($_POST["first_page_info"])){
           <input type="text" class="form-control" name="inputZip">
         </div>
       </div>
-    <div id="date" class="form-group col-md-4">
-      <label for="date">Date : </label>
+    <div id="Date" class="form-group col-md-4">
+      <label for="Date">Date : </label>
       <input type="date" class="form-control" id="Date" name="Date">
     </div>
       <button type="submit" name="first_page_info" class="btn btn-primary">Submit</button>
