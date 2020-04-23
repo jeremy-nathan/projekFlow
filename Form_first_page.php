@@ -1,3 +1,5 @@
+
+
 <?php
 require_once './GFirestore.php';
 
@@ -24,15 +26,12 @@ if(isset($_POST["first_page_info"])){
               "City" => $inputCity,
               "State" =>$inputState,
               "Zip_code" =>$inputZip,
-              "Date" => date_create("$Date 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
-  ]
+              "Date" => date_create("$Date 00:00:00",timezone_open("Asia/Kuala_Lumpur"))
+  ];
 
   $Letter_info->createDocument($full_name,$data);
 
 }
-
-
-
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -68,25 +67,25 @@ if(isset($_POST["first_page_info"])){
       <div class="form-row">
         <div id="first_name" class="form-group col-lg-12">
           <label for="full_name">Full Name / Association's Name / Club's Name</label>
-          <input type="text" class="form-control" id="full_name">
+          <input type="text" class="form-control" name="full_name">
         </div>
       </div>
       <div id="street_address" class="form-group">
         <label for="inputAddress1">Address</label>
-        <input type="text" class="form-control" id="inputAddress1" placeholder="1234 Main St">
+        <input type="text" class="form-control" name="inputAddress1" placeholder="1234 Main St">
       </div>
       <div id="street_address_2" class="form-group">
         <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        <input type="text" class="form-control" name="inputAddress2" placeholder="Apartment, studio, or floor">
       </div>
       <div id="city" class="form-row">
         <div class="form-group col-md-6">
           <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity">
+          <input type="text" class="form-control" name="inputCity">
         </div>
         <div id="state" class="form-group col-md-4">
           <label for="inputState">State</label>
-          <select id="inputState" class="form-control">
+          <select name="inputState" class="form-control">
             <option selected>Choose...</option>
             <option>Selangor</option>
             <option>Perak</option>
@@ -107,14 +106,14 @@ if(isset($_POST["first_page_info"])){
         </div>
         <div id="zip_code" class="form-group col-md-2">
           <label for="inputZip">Zip Code</label>
-          <input type="text" class="form-control" id="inputZip">
+          <input type="text" class="form-control" name="inputZip">
         </div>
       </div>
     <div id="date" class="form-group col-md-4">
       <label for="date">Date : </label>
       <input type="date" class="form-control" id="Date" name="Date">
     </div>
-      <button type="submit" id="first_page_info" class="btn btn-primary">Submit</button>
+      <button type="submit" name="first_page_info" class="btn btn-primary">Submit</button>
     </form>
   </div>
   </div>
