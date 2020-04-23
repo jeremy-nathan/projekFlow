@@ -16,17 +16,16 @@
 
   <body>
     <form action="form_second_page.php" method="POST">
-      <div id ="Header" class="card">
-  <div class="card-body">
-      <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Step 1: Heading</h1>
-    <p class="lead">This will include the sender's information, located in the top-left part of the letter.</p>
-  </div>
-</div>
-</div>
-</div>
-
+            <div id ="Header" class="card">
+        <div class="card-body">
+            <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Step 1: Heading</h1>
+          <p class="lead">This will include the sender's information, located in the top-left part of the letter.</p>
+        </div>
+      </div>
+      </div>
+      </div>
       <div class="card">
         <div class = "card-body">
       <div class="form-row">
