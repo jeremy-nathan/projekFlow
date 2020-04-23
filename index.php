@@ -2,7 +2,7 @@
 <head>
   <title>Firebase Login</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 <!-- Login -->
@@ -82,8 +82,8 @@
 <!-- //update firestore settings -->
 <!-- db.settings({timestampsInSnapshots: true}); -->
 
-  <script src="index.js"></script>
-  <script src="auth.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/auth.js"></script>
 
 </body>
 </html>
