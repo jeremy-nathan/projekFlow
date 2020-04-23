@@ -76,6 +76,16 @@
   // var db = firebase.firestore(); 
 </script>
 
+<meta name="viewport" content="width-device-width, initial-scale=1">
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Ask us anything!"
+  agent-id="71489671-749b-48f8-839a-af63e12e262e"
+  language-code="en"
+></df-messenger>
+
+
 <!-- // make auth and firestore references-->
 <!-- const auth = firebase.auth() -->
 <!-- const db = firebase.firestore() -->
