@@ -1,3 +1,48 @@
+<?php
+require_once './GFirestore.php';
+
+// Disable notices. No errors will be displayed on the web page
+error_reporting(0);
+
+$Letter_info = new Firestore('Letter_info');
+
+$data=[];
+
+if(isset($_POST["first_page_info"])){
+  $full_name = $_POST["full_name"];
+  $inputAddress1 = $_POST["inputAddress1"];
+  $inputAddress2 = $_POST["inputAddress2"];
+  $inputCity = $_POST["inputCity"];
+  $inputState = $_POST["inputState"];
+  $inputZip = $_POST["inputZip"];
+  $Date = $_POST["Date"];
+  $Letter_title = $_POST["Letter_title"];
+  $Body_paragraphs = $_POST["Body_paragraphs"];
+  $Senders_name = $_POST["Senders_name"];
+  $Senders_position = $_POST["Senders_position"];
+  $AssociationClub_Name =$_POST["AssociationClub_Name"];
+
+
+  $data = [
+              "Full_Name"=> $full_name,
+              "Address_1"=> $inputAddress1,
+              "Address_2"=> $inputAddress2,
+              "City" => $inputCity,
+              "State" =>$inputState,
+              "Zip_code" =>$inputZip,
+              "Date" => date_create("$Date 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
+              "Letter_title"=>$Letter_title,
+              "Body_paragraphs"=>$Body_paragraphs,
+              "Senders_position"=>$Senders_position,
+              "AssociationClub_Name"=>$AssociationClub_Name
+  ];
+
+  $Letter_info->createDocument($full_name,$data);
+
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -16,7 +61,7 @@
 
 
   <body>
-    <form action="form_second_page.php" method="POST">
+    <form action="" method="POST">
             <div id ="Header" class="card">
         <div class="card-body">
             <div class="jumbotron jumbotron-fluid">
@@ -27,10 +72,11 @@
       </div>
       </div>
       </div>
+
       <div class="card">
         <div class = "card-body">
       <div class="form-row">
-        <div id="first_name" class="form-group col-lg-12">
+        <div id="first_name" class="form-group col-lg-8">
           <label for="full_name">Full Name / Association's Name / Club's Name</label>
           <input type="text" class="form-control" name="full_name">
         </div>
@@ -78,10 +124,89 @@
       <label for="Date">Date : </label>
       <input type="date" class="form-control" id="Date" name="Date">
     </div>
-      <button type="submit" name="first_page_info" class="btn btn-primary">Submit</button>
-    </form>
+      <!-- <button id="submit_button" type="submit" name="first_page_info" class="btn btn-primary">Submit</button> -->
   </div>
+    </div>
+      <div id ="Header" class="card">
+    <div class="card-body">
+      <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+    <h1 class="display-4">Step 2: Body</h1>
+    <p class="lead">This will include the title and the contents of the letter.</p>
+    </div>
+    </div>
+    </div>
+
   </div>
+
+  <div class="card">
+    <div class = "card-body">
+  <div class="form-row">
+    <div id="title" class="form-group col-lg-12">
+      <label for="inputEmail4">Letter Title</label>
+      <p id="title_caption">Your title should be accurate and concise.</p>
+      <input type="text" class="form-control" id="Letter_title" name="Letter_title">
+    </div>
+
+  </div>
+  <div id="body_title" class="form-group">
+<label for="exampleFormControlTextarea1">Body Paragraphs</label>
+<p id="body_caption">Include space between paragraphs.</p>
+<textarea class="form-control" id="Body_paragraphs" name="Body_paragraphs" rows="6"></textarea>
+ </div>
+</div>
+  <!-- <button id="submit_button" name="second_page_info" type="submit" class="btn btn-primary">Submit</button> -->
+  </div>
+
+  <div id ="Header" class="card">
+<div class="card-body">
+  <div class="jumbotron jumbotron-fluid">
+<div class="container">
+<h1 class="display-4">Step 3: Closing</h1>
+<p class="lead">The closing is used to end your letter.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+  <div class = "card-body">
+
+  <div id="body_title" class="form-group col-lg-9">
+    <label for="inputEmail4">Sign-off</label>
+    <p class="sign-off_caption">The sign-off can vary depending on to whom you are writing. Here are some examples:</p>
+      <ul id=sign-off_list>
+        <li>Sincerely</li>
+        <li>Yours truly</li>
+        <li>Cordially</li>
+      </ul>
+      <p class="sign-off_caption">Include a comma (,) after the closing.</p>
+    <input type="text" class="form-control" id="Sign_off" name="Sign_off">
+  </div>
+
+
+<div id="body_title" class="form-group col-lg-9">
+<label for="exampleFormControlTextarea1">Sender's Name</label>
+<p id="body_caption">Type your full name for the signature.</p>
+<p id="body_caption">Remember to sign your name under the closing after printing.</p>
+<input type="text" class="form-control" id="Senders_name" name="Senders_name">
+</div>
+<div id="body_title" class="form-group col-lg-9">
+<label for="exampleFormControlTextarea1">Sender's Position</label>
+<p id="body_caption">Type your position or role in the association/club.</p>
+<input type="text" class="form-control" id="Senders_position" name="Senders_position">
+</div>
+<div id="body_title" class="form-group col-lg-9">
+<label for="exampleFormControlTextarea1">Association / Club Name</label>
+<p id="body_caption">Type your association/club name.</p>
+<input type="text" class="form-control" id="AssociationClub_Name" name="AssociationClub_Name">
+</div>
+</div>
+<button id="first_page_info" name="first_page_info" type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+  </form>
+
   </body>
 
 </html>

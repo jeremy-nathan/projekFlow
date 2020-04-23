@@ -50,7 +50,7 @@ if(isset($_POST["first_page_info"])){
   </head>
 
   <body>
-    <form>
+    <form action="form_third_page.php" method="POST">
       <div id ="Header" class="card">
   <div class="card-body">
       <div class="jumbotron jumbotron-fluid">
