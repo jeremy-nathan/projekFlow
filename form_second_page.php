@@ -1,3 +1,38 @@
+<?php
+require_once './GFirestore.php';
+
+// Disable notices. No errors will be displayed on the web page
+error_reporting(0);
+
+$Letter_info = new Firestore('Letter_info');
+
+$data=[];
+
+if(isset($_POST["first_page_info"])){
+  $full_name = $_POST["full_name"];
+  $inputAddress1 = $_POST["inputAddress1"];
+  $inputAddress2 = $_POST["inputAddress2"];
+  $inputCity = $_POST["inputCity"];
+  $inputState = $_POST["inputState"];
+  $inputZip = $_POST["inputZip"];
+  $Date = $_POST["Date"];
+
+  $data = [
+              "Full_Name"=> $full_name,
+              "Address_1"=> $inputAddress1,
+              "Address_2"=> $inputAddress2,
+              "City" => $inputCity,
+              "State" =>$inputState,
+              "Zip_code" =>$inputZip,
+              "Date" => date_create("$Date 00:00:00",timezone_open("Asia/Kuala_Lumpur"))
+  ];
+
+  $Letter_info->createDocument($full_name,$data);
+
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -15,7 +50,7 @@
   </head>
 
   <body>
-    <form action="form_third_page.php" method="POST">
+    <form>
       <div id ="Header" class="card">
   <div class="card-body">
       <div class="jumbotron jumbotron-fluid">
@@ -33,17 +68,17 @@
         <div id="title" class="form-group col-lg-12">
           <label for="inputEmail4">Letter Title</label>
           <p id="title_caption">Your title should be accurate and concise.</p>
-          <input type="text" class="form-control" id="inputEmail4">
+          <input type="text" class="form-control" id="Letter_title" name="Letter_title">
         </div>
 
       </div>
       <div id="body_title" class="form-group">
    <label for="exampleFormControlTextarea1">Body Paragraphs</label>
    <p id="body_caption">Include space between paragraphs.</p>
-   <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+   <textarea class="form-control" id="exampleFormControlTextarea1" name="Body_paragraphs" rows="6"></textarea>
      </div>
     </div>
-      <button id="submit_button" type="submit" class="btn btn-primary">Submit</button>
+      <button name="second_page_info" id="submit_button" type="submit" class="btn btn-primary">Submit</button>
       </div>
     </form>
   </body>

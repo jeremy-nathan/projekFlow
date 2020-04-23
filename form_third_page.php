@@ -1,3 +1,34 @@
+ <!-- /*
+require_once './GFirestore.php';
+
+// Disable notices. No errors will be displayed on the web page
+error_reporting(0);
+
+$Letter_info = new Firestore('Letter_info');
+
+$data=[];
+
+if(isset($_POST["second_page_info"])){
+  $Letter_title = $_POST["Letter_title"];
+  $Body_paragraphs = $_POST["Body_paragraphs"];
+  $data = [
+    "Letter_title" =>$Letter_title,
+    "Body_paragraphs" =>$Body_paragraphs
+              // "Full_Name"=> $full_name,
+              // "Address_1"=> $inputAddress1,
+              // "Address_2"=> $inputAddress2,
+              // "City" => $inputCity,
+              // "State" =>$inputState,
+              // "Zip_code" =>$inputZip,
+              // "Date" => date_create("$Date 00:00:00",timezone_open("Asia/Kuala_Lumpur"))
+  ];
+
+  $Letter_info->createDocument($full_name,$data);
+
+}
+*/ -->
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -15,7 +46,7 @@
   </head>
 
   <body>
-    <form>
+    <form action="form_third_page.php" method="POST">
       <div id ="Header" class="card">
   <div class="card-body">
       <div class="jumbotron jumbotron-fluid">
