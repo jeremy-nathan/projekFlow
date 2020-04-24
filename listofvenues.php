@@ -1,5 +1,9 @@
 <?php
 
+// Starts the session to store data in global variables.
+// These global variables can be called in other pages too. 
+session_start();
+
 require_once './GFirestore.php';
 
 // Disable notices. No errors will be displayed on the web page
@@ -11,8 +15,12 @@ $venue=new Firestore('venues');
 
 $dataa=[];
 
+
 // Checks if event has been created
 if(isset($_POST["create"])){
+
+// Saves value of "eventname" in a global variable called 'name'
+    $_SESSION['name']=$_POST["eventname"];
 
     $startdate=$_POST["startdate"];
     $enddate=$_POST["enddate"];
@@ -91,7 +99,7 @@ else{
         </div>
     </nav>
     <div class="container" style="margin-top: 100px;">
-        <h1 class="text-center text-dark">Filter</h1>
+        <h1 class="text-center text-dark">Filter <?php echo $_SESSION['name']; ?></h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
             <div class="form-row">
                 <div class="col-sm-12">
