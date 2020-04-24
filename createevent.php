@@ -31,7 +31,7 @@
                 </ul>
                 <span class="navbar-text actions">
                     <a class="login" href="#">Log In</a>
-                    <a class="login" href="#">Log In</a>
+                    <a class="logout" href="#" onclick="triallogout();">Log Out</a>
                     <a class="btn btn-light action-button" role="button" href="#">Sign Up</a>
                 </span>
             </div>
@@ -114,6 +114,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+    <script src="assets/js/index.js"></script>
+
 </body>
 
 </html>
