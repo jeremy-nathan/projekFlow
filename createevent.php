@@ -19,14 +19,22 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md bg-light border rounded-0 shadow navigation-clean-button">
-        <div class="container-fluid"><a class="navbar-brand" data-aos="fade" href="#">ProjekFlow</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid">
+        <a class="navbar-brand" data-aos="fade" href="#">ProjekFlow</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav text-primary ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
-                </ul><span class="navbar-text actions"> <a class="login" href="#">Log In</a><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></span></div>
+                </ul>
+                <span class="navbar-text actions">
+                    <a class="login" href="#">Log In</a>
+                    <a class="login" href="#">Log In</a>
+                    <a class="btn btn-light action-button" role="button" href="#">Sign Up</a>
+                </span>
+            </div>
         </div>
     </nav>
     <div class="container" style="margin-top: 50px;margin-bottom: 100px;">
