@@ -30,8 +30,10 @@ if(isset($_POST["create"])){
     $numOfParticipants=$_POST["numOfParticipants"];
 
     $dataa=[
-        "StartDate"=>date_create("$startdate 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
-        "EndDate"=>date_create("$enddate 23:59:59",timezone_open("Asia/Kuala_Lumpur")),
+        // "StartDate"=>date_create("$startdate 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
+        // "EndDate"=>date_create("$enddate 23:59:59",timezone_open("Asia/Kuala_Lumpur")),
+        "StartDate"=>date_format(date_create($startdate),'d/m/Y'),
+        "EndDate"=>date_format(date_create($enddate),'d/m/Y'),
         "EventName"=>$eventname,
         "Category"=>$venuecategory,
         "SpecialEquipment"=>$equipment,
