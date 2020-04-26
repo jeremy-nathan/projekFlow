@@ -30,9 +30,9 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
                 </ul>
                 <span class="navbar-text actions">
-                    <a class="login" href="#">Log In</a>
-                    <a class="logout" href="#" onclick="triallogout();">Log Out</a>
-                    <a class="btn btn-light action-button" role="button" href="#">Sign Up</a>
+                    <a class="login" href="index.php">Log In</a>
+                    <a class="logout" href="index.php" onclick="triallogout();">Log Out</a>
+                    <a class="btn btn-light action-button" role="button" href="index.php#newuser_div">Sign Up</a>
                 </span>
             </div>
         </div>
