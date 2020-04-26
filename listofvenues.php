@@ -1,5 +1,9 @@
 <?php
 
+// Starts the session to store data in global variables.
+// These global variables can be called in other pages too. 
+session_start();
+
 require_once './GFirestore.php';
 
 // Disable notices. No errors will be displayed on the web page
@@ -11,8 +15,12 @@ $venue=new Firestore('venues');
 
 $dataa=[];
 
+
 // Checks if event has been created
 if(isset($_POST["create"])){
+
+// Saves value of "eventname" in a global variable called 'name'
+    $_SESSION['name']=$_POST["eventname"];
 
     $startdate=$_POST["startdate"];
     $enddate=$_POST["enddate"];
@@ -22,8 +30,10 @@ if(isset($_POST["create"])){
     $numOfParticipants=$_POST["numOfParticipants"];
 
     $dataa=[
-        "StartDate"=>date_create("$startdate 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
-        "EndDate"=>date_create("$enddate 23:59:59",timezone_open("Asia/Kuala_Lumpur")),
+        // "StartDate"=>date_create("$startdate 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
+        // "EndDate"=>date_create("$enddate 23:59:59",timezone_open("Asia/Kuala_Lumpur")),
+        "StartDate"=>date_format(date_create($startdate),'d/m/Y'),
+        "EndDate"=>date_format(date_create($enddate),'d/m/Y'),
         "EventName"=>$eventname,
         "Category"=>$venuecategory,
         "SpecialEquipment"=>$equipment,
@@ -87,11 +97,11 @@ else{
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
-                </ul><span class="navbar-text actions"> <a class="login" href="#">Log In</a><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></span></div>
+                </ul><span class="navbar-text actions"> <a class="login" href="index.php">Log In</a><a class="btn btn-light action-button" role="button" href="index.php#newuser_div">Sign Up</a></span></div>
         </div>
     </nav>
     <div class="container" style="margin-top: 100px;">
-        <h1 class="text-center text-dark">Filter</h1>
+        <h1 class="text-center text-dark">Filter <?php echo $_SESSION['name']; ?></h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
             <div class="form-row">
                 <div class="col-sm-12">
@@ -157,7 +167,9 @@ else{
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary float-right" name="book" type="submit" value="'.$data["Name"].'" formmethod="GET" formaction="details.php" style="border-radius: 30px;">Book</button>
+                        <form>
+                            <button class="btn btn-primary float-right" name="book" type="submit" value="'.$data["Name"].'" formmethod="GET" formaction="details.php" style="border-radius: 30px;">Book</button>
+                        </form>
                     </div>
                 </div>
             </div>';

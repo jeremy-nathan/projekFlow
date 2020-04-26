@@ -91,7 +91,19 @@ function backtologinpage(){
 
 }
 
-
+//affects the loginpage after a user is logged in. Take precautions
+//did not include in the sign out page as logout() is connected to login page 
 function logout(){
   firebase.auth().signOut();
+
+  //return to logout page
+   //alert("Log out successful");
+  
+   //backtologinpage();
+}
+
+function triallogout(){
+  alert("yay it works! since no user yet have to try again with the firebase.auth");
+  firebase.auth().signOut();
+  backtologinpage(); //may have to edit paths? This is not popping up 
 }
