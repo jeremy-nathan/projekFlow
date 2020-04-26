@@ -1,14 +1,38 @@
 <?php
+session_start();
 require_once './GFirestore.php';
-
+require 'vendor/autoload.php';
+use GuzzleHttp\Client;
 // Disable notices. No errors will be displayed on the web page
 error_reporting(0);
 
 $Letter_info = new Firestore('Letter_info');
 
-$data=[];
+$docdata=[];
+
 
 if(isset($_POST["first_page_info"])){
+
+    $key = '13a5916221a4c40a6c00180f4e68877b769a8d86c0aa4ee0e5f4758ae3ebb4f4';
+    $secret = '46e9868bbce2655a0bf59d66f8abaebcf454aaddf652341310eac297054ff8f0';
+    $workspace = 'kannakanna56@yahoo.com.my';
+    $resource = 'templates/95587/output';
+    $data = [
+      'key' => $key,
+      'resource' => $resource,
+      'workspace' => $workspace
+    ];
+
+    ksort($data);
+
+    $signature = hash_hmac('sha256', implode('', $data), $secret);
+
+    $client = new \GuzzleHttp\Client([
+        'base_uri' => 'https://us1.pdfgeneratorapi.com/api/v3/'
+    ]);
+
+    // $date = date_create('2000-01-01');
+    echo date_format($date, 'Y-m-d H:i:s');
   $full_name = $_POST["full_name"];
   $inputAddress1 = $_POST["inputAddress1"];
   $inputAddress2 = $_POST["inputAddress2"];
@@ -18,29 +42,80 @@ if(isset($_POST["first_page_info"])){
   $Date = $_POST["Date"];
   $Letter_title = $_POST["Letter_title"];
   $Body_paragraphs = $_POST["Body_paragraphs"];
+  $Sign_off =$_POST["Sign_off"];
   $Senders_name = $_POST["Senders_name"];
   $Senders_position = $_POST["Senders_position"];
   $AssociationClub_Name =$_POST["AssociationClub_Name"];
 
-
-  $data = [
+  $docdata = [
               "Full_Name"=> $full_name,
               "Address_1"=> $inputAddress1,
               "Address_2"=> $inputAddress2,
               "City" => $inputCity,
               "State" =>$inputState,
               "Zip_code" =>$inputZip,
-              "Date" => date_create("$Date 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
+              "Date" =>$Date, /*date_create("$Date",timezone_open("Asia/Kuala_Lumpur"))*/
               "Letter_title"=>$Letter_title,
               "Body_paragraphs"=>$Body_paragraphs,
+              "Sign_off"=>$Sign_off,
+              "Senders_name"=>$Senders_name,
               "Senders_position"=>$Senders_position,
               "AssociationClub_Name"=>$AssociationClub_Name
   ];
 
-  $Letter_info->createDocument($full_name,$data);
+  // $DateNew = date_create("$Date",timezone_open("Asia/Kuala_Lumpur"));
 
+
+    // echo gettype($docdata["Date"]);
+    // echo $docdata["Date"];
+  $Letter_info->createDocument($full_name,$docdata);
+
+  $latest_entry=[];
+  $latest_entry=($Letter_info->getDocument($full_name));
+  sleep(1);
+  // echo "ok";
+
+  $latest_entry_json = json_encode($latest_entry);
+  $decoded_entry_json = json_decode($latest_entry_json);
+
+  /**
+   * Authentication params sent in headers
+   */
+
+  $response = $client->request('POST', $resource, [
+    'body' => $latest_entry_json,
+    'query' => [
+      'format' => 'pdf',
+      'output' => 'url'
+    ],
+    'headers' => [
+      'X-Auth-Key' => $key,
+      'X-Auth-Workspace' => $workspace,
+      'X-Auth-Signature' => $signature,
+      'Accept' => 'application/json',
+      'Content-Type' => 'application/json; charset=utf-8',
+    ]
+  ]);
+    /**
+     * Authentication params sent in query string
+     */
+    $response = $client->request('POST', $resource, [
+      'body' => $latest_entry_json,
+      'query' => [
+        'key' => $key,
+        'workspace' => $workspace,
+        'signature' => $signature,
+        'format' => 'pdf',
+        'output' => 'url'
+      ]
+    ]);
+
+    $contents = $response->getBody()->getContents();
+    // $_SESSION=["final_url"]=$contents;
+    $decoded_contents = json_decode($contents,true);
+    $remoteURL= $decoded_contents["response"];
+    header("location:$remoteURL");
 }
-
  ?>
 
 <!DOCTYPE html>
@@ -117,7 +192,7 @@ if(isset($_POST["first_page_info"])){
         </div>
         <div id="zip_code" class="form-group col-md-2">
           <label for="inputZip">Zip Code</label>
-          <input type="text" class="form-control" name="inputZip">
+          <input type="number" class="form-control" name="inputZip">
         </div>
       </div>
     <div id="Date" class="form-group col-md-4">
@@ -202,7 +277,7 @@ if(isset($_POST["first_page_info"])){
 <input type="text" class="form-control" id="AssociationClub_Name" name="AssociationClub_Name">
 </div>
 </div>
-<button id="first_page_info" name="first_page_info" type="submit" class="btn btn-primary">Submit</button>
+<button target="_blank" id="first_page_info" name="first_page_info" type="submit" class="btn btn-primary">Submit</button>
 </div>
 
   </form>
