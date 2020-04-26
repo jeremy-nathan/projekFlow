@@ -31,7 +31,7 @@ if(isset($_POST["first_page_info"])){
         'base_uri' => 'https://us1.pdfgeneratorapi.com/api/v3/'
     ]);
 
-    // $date = date_create('2000-01-01');
+  
     echo date_format($date, 'Y-m-d H:i:s');
   $full_name = $_POST["full_name"];
   $inputAddress1 = $_POST["inputAddress1"];
@@ -54,7 +54,7 @@ if(isset($_POST["first_page_info"])){
               "City" => $inputCity,
               "State" =>$inputState,
               "Zip_code" =>$inputZip,
-              "Date" =>$Date, /*date_create("$Date",timezone_open("Asia/Kuala_Lumpur"))*/
+              "Date" =>$Date,
               "Letter_title"=>$Letter_title,
               "Body_paragraphs"=>$Body_paragraphs,
               "Sign_off"=>$Sign_off,
@@ -63,17 +63,12 @@ if(isset($_POST["first_page_info"])){
               "AssociationClub_Name"=>$AssociationClub_Name
   ];
 
-  // $DateNew = date_create("$Date",timezone_open("Asia/Kuala_Lumpur"));
-
-
-    // echo gettype($docdata["Date"]);
-    // echo $docdata["Date"];
   $Letter_info->createDocument($full_name,$docdata);
 
   $latest_entry=[];
   $latest_entry=($Letter_info->getDocument($full_name));
   sleep(1);
-  // echo "ok";
+
 
   $latest_entry_json = json_encode($latest_entry);
   $decoded_entry_json = json_decode($latest_entry_json);
@@ -111,7 +106,7 @@ if(isset($_POST["first_page_info"])){
     ]);
 
     $contents = $response->getBody()->getContents();
-    // $_SESSION=["final_url"]=$contents;
+
     $decoded_contents = json_decode($contents,true);
     $remoteURL= $decoded_contents["response"];
     header("location:$remoteURL");
