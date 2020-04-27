@@ -66,9 +66,7 @@ function login(){
 
 function register(){
 
-  document.getElementById("newuser_div").style.display = "block";
-  document.getElementById("login_div").style.display = "none";
-  
+  window.location.assign("registration.php");
   
   //sign up new users 
 
