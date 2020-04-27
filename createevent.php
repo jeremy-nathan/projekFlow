@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -30,9 +39,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
                 </ul>
                 <span class="navbar-text actions">
-                    <a class="login" href="index.php">Log In</a>
-                    <a class="logout" href="index.php" onclick="logout();">Log Out</a>
-                    <a class="btn btn-light action-button" role="button" href="registration.php">Sign Up</a>
+                    <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">log Out</button>
                 </span> <!-- double check on the logout() -->
             </div>
         </div>
@@ -124,6 +131,10 @@
   agent-id="71489671-749b-48f8-839a-af63e12e262e"
   language-code="en"
 ></df-messenger>
+
+  <script src="assets/js/fireBase.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/other.js"></script>
 
 </body>
 

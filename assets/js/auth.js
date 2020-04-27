@@ -1,71 +1,38 @@
-/*// signup
-const signupForm = document.querySelector('#newuser_div');
-signupForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  
-  // get user info
-  const email = signupForm['newemail_field'].value;
-  const password = signupForm['newpassword_field'].value;
+(function () {
+  // Initialize the FirebaseUI Widget using Firebase.
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  var uiConfig = {
+    callbacks: {
+      signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+        // User successfully signed in.
+        // Return type determines whether we continue the redirect automatically
+        // or whether we leave that to developer to handle.
+        return true;
+      },
+      uiShown: function () {
+        // The widget is rendered.
+        // Hide the loader.
+        document.getElementById('loader').style.display = 'none';
+      }
+    },
+    // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+    signInFlow: 'popup',
+    signInSuccessUrl: 'createevent.php',
+    signInOptions: [
+      // Leave the lines as is for the providers you want to offer your users.
+      // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      // firebase.auth.GithubAuthProvider.PROVIDER_ID,
+      firebase.auth.EmailAuthProvider.PROVIDER_ID //Logging in via Email and password only
+      // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+    ],
+    // Terms of service url.
+    tosUrl: 'createevent.php',
+    // Privacy policy url.
+    // privacyPolicyUrl: 'main.html'
+  };
+  // The start method will wait until the DOM is loaded.
+  ui.start('#firebaseui-auth-container', uiConfig);
 
-  // sign up the user
-  auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    console.log(cred.user);
-    // close the signup modal & reset form
-    const modal = document.querySelector('#newuser_div');
-    signupForm.reset();
-  });
-}); */
-
-
-
-    // Since these fields will not passed in for creating a user. It is redundant
-
-      // sign up new users 
-  function submit(){
-        
-    const db = firebase.firestore();
-          
-    // get user info
-    const email = document.getElementById('newemail_field').value;
-    const password = document.getElementById('newpassword_field').value;
-    const matricnumber = document.getElementById('matric_field').value;
-    const name = document.getElementById('name_field').value;
-    const phonenumber = document.getElementById('phone_field').value;
-    var category = document.getElementById('category_field').value;
-
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/weak-password') {
-          alert('The password is too weak.');
-        } else {
-          alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-      });
-        window.location.assign("createevent.php");
-
-      alert("Registered!");
-
-      db.collection("User").add({
-          "Full Name": name,
-          "New Matric Number": matricnumber,
-          "Email": email,
-          "Phone number": phonenumber,
-          "Category" : category
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
-
-
-    }
-
-
-
-
-
-
+})();

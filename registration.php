@@ -3,10 +3,17 @@
   <title>projekFlow Sign Up </title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
 </head>
 <body>
-
-
   <!-- Signup -->
   <div id="newuser_div" class="register-div">    
     <h3>Hello! Welcome to projekFlow</h3>
@@ -28,39 +35,6 @@
     <button type="button" onclick="backtologinpage()">Back to Login Page</button>
   </div>
 
-
-
- <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-<!-- Load Firestore library -->
-<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
-
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-       <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
-        
-       <!-- Loading firebase authentication library -->
-        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyATa9yGV000iVrO-_d-z2fToEHWNEC7r10",
-    authDomain: "fir-php-4bdd0.firebaseapp.com",
-    databaseURL: "https://fir-php-4bdd0.firebaseio.com",
-    projectId: "fir-php-4bdd0",
-    storageBucket: "fir-php-4bdd0.appspot.com",
-    messagingSenderId: "235554520478",
-    appId: "1:235554520478:web:fa027bd1f5a0d59cfd6a8f",
-    measurementId: "G-3GGPTN9XKD"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-  // var db = firebase.firestore(); 
-</script>
-
 <meta name="viewport" content="width-device-width, initial-scale=1">
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
@@ -77,8 +51,9 @@
 <!-- //update firestore settings -->
 <!-- db.settings({timestampsInSnapshots: true}); -->
 
-  <script src="assets/js/index.js"></script>
+  <script src="assets/js/fireBase.js"></script>
   <script src="assets/js/auth.js"></script>
+  <script src="assets/js/other.js"></script>
 
 </body>
 </html>
