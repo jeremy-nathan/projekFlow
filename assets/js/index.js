@@ -9,7 +9,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     if(user != null){
 
+
       var email_id = user.email;
+      
+      
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
 
     }
@@ -66,9 +69,7 @@ function login(){
 
 function register(){
 
-  document.getElementById("newuser_div").style.display = "block";
-  document.getElementById("login_div").style.display = "none";
-  
+  window.location.assign("registration.php");
   
   //sign up new users 
 
@@ -84,7 +85,7 @@ function register(){
 
 function backtologinpage(){
 
-  window.location.assign("index.html");
+  window.location.assign("index.php");
   //document.getElementById("user_div").style.display = "none";
   //document.getElementById("login_div").style.display = "block";
   //document.getElementById("newuser_div").style.display = "none";

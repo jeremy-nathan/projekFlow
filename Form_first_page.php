@@ -256,25 +256,24 @@ if(isset($_POST["first_page_info"])){
   </div>
 
 
-<div id="body_title" class="form-group col-lg-9">
-<label for="exampleFormControlTextarea1">Sender's Name</label>
-<p id="body_caption">Type your full name for the signature.</p>
-<p id="body_caption">Remember to sign your name under the closing after printing.</p>
-<input type="text" class="form-control" id="Senders_name" name="Senders_name">
-</div>
-<div id="body_title" class="form-group col-lg-9">
-<label for="exampleFormControlTextarea1">Sender's Position</label>
-<p id="body_caption">Type your position or role in the association/club.</p>
-<input type="text" class="form-control" id="Senders_position" name="Senders_position">
-</div>
-<div id="body_title" class="form-group col-lg-9">
-<label for="exampleFormControlTextarea1">Association / Club Name</label>
-<p id="body_caption">Type your association/club name.</p>
-<input type="text" class="form-control" id="AssociationClub_Name" name="AssociationClub_Name">
-</div>
-</div>
-<button target="_blank" id="first_page_info" name="first_page_info" type="submit" class="btn btn-primary">Submit</button>
-</div>
+    <div id="body_title" class="form-group col-12 col-xs-12 col-sm-12 col-lg-12">
+      <label for="exampleFormControlTextarea1">Sender's Name</label>
+      <p id="body_caption">Type your full name for the signature.</p>
+      <p id="body_caption">Remember to sign your name under the closing after printing.</p>
+      <input type="text" class="form-control" id="Senders_name" name="Senders_name">
+    </div>
+    <div id="body_title" class="form-group col-lg-9">
+        <label for="exampleFormControlTextarea1">Sender's Position</label>
+        <p id="body_caption">Type your position or role in the association/club.</p>
+        <input type="text" class="form-control" id="Senders_position" name="Senders_position">
+    </div>
+    <div id="body_title" class="form-group col-lg-9">
+    <label for="exampleFormControlTextarea1">Association / Club Name</label>
+    <p id="body_caption">Type your association/club name.</p>
+    <input type="text" class="form-control" id="AssociationClub_Name" name="AssociationClub_Name">
+  </div>
+    <button target="_blank" id="first_page_info" name="first_page_info" type="submit" class="btn btn-primary">Submit</button>
+    </div>
 
   </form>
 

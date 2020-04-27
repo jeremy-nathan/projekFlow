@@ -31,7 +31,7 @@
                 </ul>
                 <span class="navbar-text actions">
                     <a class="login" href="index.php">Log In</a>
-                    <a class="logout" href="index.php" onclick="triallogout();">Log Out</a>
+                    <a class="logout" href="index.php" onclick="logout();">Log Out</a>
                     <a class="btn btn-light action-button" role="button" href="registration.php">Sign Up</a>
                 </span> <!-- double check on the logout() -->
             </div>
