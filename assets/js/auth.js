@@ -58,6 +58,8 @@ signupForm.addEventListener('submit', (e) => {
           console.error(error);
         });
 
+
+        //window.alert("Registered!");
     }
 
 
