@@ -31,7 +31,7 @@ if(isset($_POST["first_page_info"])){
         'base_uri' => 'https://us1.pdfgeneratorapi.com/api/v3/'
     ]);
 
-  
+
     echo date_format($date, 'Y-m-d H:i:s');
   $full_name = $_POST["full_name"];
   $inputAddress1 = $_POST["inputAddress1"];
