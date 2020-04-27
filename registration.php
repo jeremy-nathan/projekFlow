@@ -25,7 +25,7 @@
     <input type="phonenumber" placeholder="Phone Number..." id="phone_field" />
     <button type="button" onclick="submit()">Submit</button>  
     <br>
-    <button type="button" onclick="backtologinpage()">Go to projekFlow</button>
+    <button type="button" onclick="backtologinpage()">Back to Login Page</button>
   </div>
 
 
