@@ -85,11 +85,11 @@ if(isset($_GET["book"])){
                     <h2><span class="badge badge-primary p-3 mb-3">'.$result[0]['Name'].'</span></h2>
                   </div>
                   <div class="row">
-                  <p><span class="badge badge-primary p-1 mr-2" style="color:white;"><i style="font-size:18px;" class="mr-1 fa fa-map-marker" aria-hidden="true"></i>Category</span> '.$result[0]['Category'].'</p>
-                  <p><span class="badge badge-primary p-1 mr-2" style="color:white;"><i style="font-size:18px;" class="mr-1 fa fa-map-marker" aria-hidden="true"></i>Facilities</span> '.$result[0]['Facilities'].'</p>
-                  <p><span class="badge badge-primary p-1 mr-2" style="color:white;"><i style="font-size:18px;" class="mr-1 fa fa-map-marker" aria-hidden="true"></i>Maximum Capacity</span> '.$result[0]['MaxCapacity'].'</p>
-                  <p><span class="badge badge-primary p-1 mr-2" style="color:white;"><i style="font-size:18px;" class="mr-1 fa fa-map-marker" aria-hidden="true"></i>Address</span> '.$result[0]['Address'].'</p>
-                  <p><span class="badge badge-primary p-1 mr-2" style="color:white;"><i style="font-size:18px;" class="mr-1 fa fa-map-marker" aria-hidden="true"></i>Contact</span> '.$result[0]['Contact'].'</p>
+                  <p style="color: rgb(52,58,64); display: inline-block;"><i class="text-success fa fa-check-square-o" aria-hidden="true"></i> <strong>Category</strong> '.$result[0]['Category'].'</br>
+                  <i class="text-success fa fa-check-square-o" aria-hidden="true"></i> <strong>Facilities</strong> '.$result[0]['Facilities'].' </br>
+                  <i class="text-success fa fa-check-square-o" aria-hidden="true"></i> <strong>Maximum Capacity</strong> '.$result[0]['MaxCapacity'].' persons </br>
+                  <i class="text-success fa fa-check-square-o" aria-hidden="true"></i> <strong>Address</strong> '.$result[0]['Address'].' </br>
+                  <i class="text-success fa fa-check-square-o" aria-hidden="true"></i> <strong>Contact</strong> '.$result[0]['Contact'].' </br>
                   </div>
                 </div>
               </div>
@@ -101,14 +101,14 @@ if(isset($_GET["book"])){
               </div>
             </div>';
         }
-      
+
         ?>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    
+
 </body>
 
 </html>
