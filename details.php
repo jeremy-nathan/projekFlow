@@ -15,11 +15,6 @@ $data=[];
 
 // Checks if event has been created
 
-if(isset($_POST["confirm"])){
-  $venue = [["path"=>"Venue","value"=>$_POST["confirm"]]];
-  $event->updateDocument($_SESSION['name'],$venue);
-  echo"<script>window.open('signin.php','_self')</script>";
-}
 
 if(isset($_GET["book"])){
 
@@ -28,6 +23,7 @@ if(isset($_GET["book"])){
     $result=[];
 
     $result=$venue->getWhere("Name","==",$venueName);
+}
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +75,6 @@ if(isset($_GET["book"])){
 						<input type="submit" value="Submit">
 					</form>*/
             echo'
-
             <div class="container">
               <div class="row  justify-content-center">
                 <div class="col-md-auto mr-5">
@@ -99,29 +94,21 @@ if(isset($_GET["book"])){
                 </div>
               </div>
               <div class="row mt-5 mb-5 justify-content-center">
-                <form action="details.php" method="POST">
+                <form action="typeofrequests.php" method="POST">
                   <button name="confirm" value="'.$venueName.'" type="submit" class="btn mr-3 btn-primary btn-lg">Confirm</button>
                   <button type="button" onClick="javascript:history.go(-1)" class="btn btn-secondary btn-lg">Back</button>
                 </form>
               </div>
-            </div>
-
-          ';
-
-          if(isset($_POST["confirm"])){
-            $event->updateDocument($_SESSION["EventName"],["Venue"=>$confirm]);
-            echo "<script>document.open('./Form_first_page.php',_self)</script>";
-          }
-          }
+            </div>';
+        }
+      
         ?>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    <?php
-      }
-    ?>
+    
 </body>
 
 </html>
