@@ -31,9 +31,9 @@
                 </ul>
                 <span class="navbar-text actions">
                     <a class="login" href="index.php">Log In</a>
-                    <a class="logout" href="index.php" onclick="triallogout();">Log Out</a>
-                    <a class="btn btn-light action-button" role="button" href="index.php#newuser_div">Sign Up</a>
-                </span>
+                    <a class="logout" href="index.php" onclick="logout();">Log Out</a>
+                    <a class="btn btn-light action-button" role="button" href="registration.php">Sign Up</a>
+                </span> <!-- double check on the logout() -->
             </div>
         </div>
     </nav>
@@ -115,6 +115,15 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="assets/js/index.js"></script>
+
+<meta name="viewport" content="width-device-width, initial-scale=1">
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Ask us anything!"
+  agent-id="71489671-749b-48f8-839a-af63e12e262e"
+  language-code="en"
+></df-messenger>
 
 </body>
 

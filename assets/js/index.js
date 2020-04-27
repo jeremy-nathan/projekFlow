@@ -45,7 +45,7 @@ function login(){
 
 
 
-function submit(){
+/*function submit(){
   
     var email = document.getElementById('newemail_field').value;
     var password = document.getElementById('newpassword_field').value;
@@ -58,18 +58,15 @@ function submit(){
     const promise = firebase.auth().createUserWithEmailAndPassword(email, password);
     promise
       .catch(e => console.log(e.message));
-    
+    //print out if the registration is successful. so far not working yet 
+    window.alert("Registered!");
 
-
-
-  }
+  } */
 
 
 function register(){
 
-  document.getElementById("newuser_div").style.display = "block";
-  document.getElementById("login_div").style.display = "none";
-  
+  window.location.assign("registration.php");
   
   //sign up new users 
 
@@ -85,9 +82,10 @@ function register(){
 
 function backtologinpage(){
 
-  document.getElementById("user_div").style.display = "none";
-  document.getElementById("login_div").style.display = "block";
-  document.getElementById("newuser_div").style.display = "none";
+  window.location.assign("index.php");
+  //document.getElementById("user_div").style.display = "none";
+  //document.getElementById("login_div").style.display = "block";
+  //document.getElementById("newuser_div").style.display = "none";
 
 }
 

@@ -46,6 +46,9 @@ signupForm.addEventListener('submit', (e) => {
         console.log(error);
         // [END_EXCLUDE]
       });
+        window.location.assign("createevent.php");
+
+      alert("Registered!");
 
       db.collection("User").add({
           "Full Name": name,
@@ -57,6 +60,7 @@ signupForm.addEventListener('submit', (e) => {
         .catch(function (error) {
           console.error(error);
         });
+
 
     }
 
