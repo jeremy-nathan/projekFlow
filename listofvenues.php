@@ -97,8 +97,8 @@ else{
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
-                </ul><span class="navbar-text actions"> <a class="login" href="index.php">Log In</a><a class="btn btn-light action-button" role="button" href="index.php#newuser_div">Sign Up</a></span></div>
-        </div>
+                </ul><span class="navbar-text actions"> <a class="login" href="index.php">Log In</a><a class="btn btn-light action-button" role="button" href="registration.php">Sign Up</a></span></div>
+        </div>  <!-- the issue is the index.html#doesnt work and the login page still glitchy-->
     </nav>
     <div class="container" style="margin-top: 100px;">
         <h1 class="text-center text-dark">Filter <?php echo $_SESSION['name']; ?></h1>
@@ -181,6 +181,18 @@ else{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+
+	
+<meta name="viewport" content="width-device-width, initial-scale=1">
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Ask us anything!"
+  agent-id="71489671-749b-48f8-839a-af63e12e262e"
+  language-code="en"
+></df-messenger>
+
+
 </body>
 
 </html>
