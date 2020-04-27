@@ -84,7 +84,7 @@ function register(){
 
 function backtologinpage(){
 
-  window.location.assign("index.html");
+  window.location.assign("index.php");
   //document.getElementById("user_div").style.display = "none";
   //document.getElementById("login_div").style.display = "block";
   //document.getElementById("newuser_div").style.display = "none";
