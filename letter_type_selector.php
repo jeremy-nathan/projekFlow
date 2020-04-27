@@ -235,12 +235,37 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </head>
 
+  <body>
+      <nav class="navbar navbar-light navbar-expand-md bg-light border rounded-0 shadow navigation-clean-button">
+        <div class="container-fluid">
+        <a class="navbar-brand" data-aos="fade" href="#">ProjekFlow</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav text-primary ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
+                </ul>
+                <span class="navbar-text actions">
+                    <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">Log Out</button>
+                </span> <!-- double check on the logout() -->
+            </div>
+        </div>
+    </nav>
+
   <div class="header">
     <img src="assets\img\um-logo.png_header.png" alt="um logo">
     <h1 class="header-title">Letter Type Selector</h1>
   </div>
   <hr class="colored" />
-  <body>
+
+
+  <div style="margin-top:100px;" class="header">
+    <img src="assets\img\um-logo.png_header.png" alt="um logo">
+    <h1 class="header-title">Letter Type Selector</h1>
+  </div>
+  <hr class="colored" />
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -312,5 +337,9 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+    <script src="assets/js/fireBase.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/other.js"></script>
   </body>
 </html>

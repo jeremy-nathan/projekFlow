@@ -39,7 +39,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
                 </ul>
                 <span class="navbar-text actions">
-                    <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">log Out</button>
+                    <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">Log Out</button>
                 </span> <!-- double check on the logout() -->
             </div>
         </div>
@@ -105,6 +105,50 @@
                                         <input name="numOfParticipants" class="form-control" type="number">
                                     </div>
                                 </div>
+                                <div class="form-row justify-content-center" style="margin-bottom: 15px;">
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">Name</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8 align-self-center">
+                                        <input name="studentName" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-row justify-content-center" style="margin-bottom: 15px;">
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">New Matric No.</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8 align-self-center">
+                                        <input name="matricNum" class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-row justify-content-center" style="margin-bottom: 15px;">
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">User Category</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8 align-self-center">
+                                        <select name="usercategory" class="form-control">
+                                            <option value="" selected="">Choose a user category</option>
+                                            <option value="Multipurpose Hall">Student</option>
+                                            <option value="Multipurpose Room">Staff</option>
+                                        </select>                                    
+                                    </div>
+                                </div>
+                                <div class="form-row justify-content-center" style="margin-bottom: 15px;">
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">Email</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8 align-self-center">
+                                        <input name="email" class="form-control" type="email">
+                                    </div>
+                                </div>
+                                <div class="form-row justify-content-center" style="margin-bottom: 15px;">
+                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
+                                        <label class="col-form-label">Phone Number</label>
+                                    </div>
+                                    <div class="col-8 col-md-6 col-lg-8 align-self-center">
+                                        <input name="phoneNum" class="form-control" type="number">
+                                    </div>
+                                </div>
                                 <div class="form-row justify-content-center align-items-center" style="margin-bottom: 15px;">
                                     <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                                         <button name="create" class="btn btn-success btn-block" type="submit">Create</button>
@@ -121,7 +165,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-    <script src="assets/js/index.js"></script>
 
 <meta name="viewport" content="width-device-width, initial-scale=1">
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>

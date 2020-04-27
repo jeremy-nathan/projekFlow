@@ -60,7 +60,11 @@ if(isset($_GET["book"])){
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
-                </ul><span class="navbar-text actions"> <a class="login" href="#">Log In</a><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></span></div>
+                </ul>
+                <span class="navbar-text actions">
+                    <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">Log Out</button>
+                </span> <!-- double check on the logout() -->
+            </div>
         </div>
     </nav>
     <div class="container" style="margin-top: 100px;">
@@ -113,6 +117,10 @@ if(isset($_GET["book"])){
 
         ?>
     </div>
+
+    <script src="assets/js/fireBase.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/other.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>

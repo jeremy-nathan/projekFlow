@@ -28,6 +28,12 @@ if(isset($_POST["create"])){
     $venuecategory=$_POST["venuecategory"];
     $equipment=$_POST["equipment"];
     $numOfParticipants=$_POST["numOfParticipants"];
+    $name=$_POST["studentName"];
+    $matricNum=$_POST["matricNum"];
+    $usercategory=$_POST["usercategory"];
+    $email=$_POST["email"];
+    $phoneNumber=$_POST["phoneNum"];
+
 
     $dataa=[
         // "StartDate"=>date_create("$startdate 00:00:00",timezone_open("Asia/Kuala_Lumpur")),
@@ -37,7 +43,12 @@ if(isset($_POST["create"])){
         "EventName"=>$eventname,
         "Category"=>$venuecategory,
         "SpecialEquipment"=>$equipment,
-        "NumberOfParticipants"=>(int)$numOfParticipants
+        "NumberOfParticipants"=>(int)$numOfParticipants,
+        "ApplicantName" => $name,
+        "ApplicantMatricNumber" => $matricNum,
+        "ApplicantCategory" => $usercategory,
+        "ApplicantEmail" => $email,
+        "ApplicantPhoneNumber" => (int)$phoneNumber
     ];
     // Creates a document for the created event
     $event->createDocument($eventname,$dataa);
@@ -113,7 +124,7 @@ else{
         </div>  <!-- the issue is the index.html#doesnt work and the login page still glitchy-->
     </nav>
     <div class="container" style="margin-top: 100px;">
-        <h1 class="text-center text-dark">Filter <?php echo $_SESSION['name']; ?></h1>
+        <h1 class="text-center text-dark">Filter</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
             <div class="form-row">
                 <div class="col-sm-12">
@@ -189,10 +200,6 @@ else{
             ?>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 
 	
 <meta name="viewport" content="width-device-width, initial-scale=1">
@@ -204,9 +211,13 @@ else{
   language-code="en"
 ></df-messenger>
 
-        <script src="assets/js/fireBase.js"></script>
-        <script src="assets/js/index.js"></script>
-        <script src="assets/js/other.js"></script>
+    <script src="assets/js/fireBase.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/other.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 
 </body>
 

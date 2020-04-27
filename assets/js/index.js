@@ -9,7 +9,7 @@ var mainApp = {};
     } else {
       // User is signed out.
       uid = null;
-      window.location.replace("login.html");
+      window.location.replace("index.php");
     }
   });
 
