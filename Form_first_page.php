@@ -11,6 +11,7 @@ $Letter_info = new Firestore('Letter_info');
 $docdata=[];
 
 
+
 if(isset($_POST["first_page_info"])){
 
     $key = '13a5916221a4c40a6c00180f4e68877b769a8d86c0aa4ee0e5f4758ae3ebb4f4';
@@ -27,12 +28,12 @@ if(isset($_POST["first_page_info"])){
 
     $signature = hash_hmac('sha256', implode('', $data), $secret);
 
+
+
     $client = new \GuzzleHttp\Client([
         'base_uri' => 'https://us1.pdfgeneratorapi.com/api/v3/'
     ]);
 
-
-    echo date_format($date, 'Y-m-d H:i:s');
   $full_name = $_POST["full_name"];
   $inputAddress1 = $_POST["inputAddress1"];
   $inputAddress2 = $_POST["inputAddress2"];

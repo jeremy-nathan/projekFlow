@@ -11,5 +11,9 @@
             "Sign_off": null,
             "Senders_name":null,
             "Senders_position": null,
-            "AssociationClub_Name": null
+            "AssociationClub_Name": null,
+            "PIC_name": null,
+            "PIC_title": null,
+            "PIC_position":null,
+            "Department": null
 }
