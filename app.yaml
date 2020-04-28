@@ -1,0 +1,3 @@
+runtime: php74
+env: standard
+entrypoint: index.php
