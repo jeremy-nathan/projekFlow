@@ -7,7 +7,7 @@ session_start();
 require_once './GFirestore.php';
 
 // Disable notices. No errors will be displayed on the web page
-error_reporting(0);
+// error_reporting(0);
 // Event collection
 $event=new Firestore('event');
 // Venue collection
