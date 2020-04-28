@@ -55,14 +55,12 @@ if(isset($_GET["book"])){
 <body class="text-primary">
     <nav class="navbar navbar-light navbar-expand-md bg-light border rounded-0 shadow navigation-clean-button">
         <div class="container-fluid">
-        <a class="navbar-brand" data-aos="fade" href="#">ProjekFlow</a>
+        <a class="navbar-brand" data-aos="fade" href="createevent.php">ProjekFlow</a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav text-primary ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="createevent.php">Book</a></li>
                 </ul>
                 <span class="navbar-text actions">
                     <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">Log Out</button>

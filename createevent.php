@@ -29,14 +29,12 @@
 <body>
     <nav class="navbar navbar-light navbar-expand-md bg-light border rounded-0 shadow navigation-clean-button">
         <div class="container-fluid">
-        <a class="navbar-brand" data-aos="fade" href="#">ProjekFlow</a>
+        <a class="navbar-brand" data-aos="fade" href="createevent.php">ProjekFlow</a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav text-primary ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="createevent.php">Book</a></li>
                 </ul>
                 <span class="navbar-text actions">
                     <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">Log Out</button>
@@ -78,19 +76,6 @@
                                 </div>
                                 <div class="form-row justify-content-center" style="margin-bottom: 15px;">
                                     <div class="col-4 col-md-2 col-lg-2 col-xl-3">
-                                        <label class="col-form-label">Venue Category</label>
-                                    </div>
-                                    <div class="col-8 col-md-6 col-lg-8">
-                                        <select name="venuecategory" class="form-control">
-                                            <option value="" selected="">Choose a venue category</option>
-                                            <option value="Multipurpose Hall">Multipurpose Hall</option>
-                                            <option value="Multipurpose Room">Multipurpose Room</option>
-                                            <option value="Dewan Tunku Canselor">Dewan Tunku Canselor</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row justify-content-center" style="margin-bottom: 15px;">
-                                    <div class="col-4 col-md-2 col-lg-2 col-xl-3">
                                         <label class="col-form-label">Special Equipment</label>
                                     </div>
                                     <div class="col-8 col-md-6 col-lg-8 align-self-center">
@@ -128,8 +113,9 @@
                                     <div class="col-8 col-md-6 col-lg-8 align-self-center">
                                         <select name="usercategory" class="form-control">
                                             <option value="" selected="">Choose a user category</option>
-                                            <option value="Multipurpose Hall">Student</option>
-                                            <option value="Multipurpose Room">Staff</option>
+                                            <option value="Student">Student</option>
+                                            <option value="Staff">Staff</option>                                            
+                                            <option value="Guest">Guest</option>
                                         </select>                                    
                                     </div>
                                 </div>

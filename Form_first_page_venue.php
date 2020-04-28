@@ -11,7 +11,30 @@ $Type_of_request = new Firestore('Type_of_request');
 $docdata=[];
 
 
-if(isset($_POST["first_page_info"])){
+if(isset($_POST["venueButton"])){
+
+
+
+    // $updates = [
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],      
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]],
+    //   ["path"=>"Venue","value"=>$_POST["confirm"]]
+
+    // ];
+
   $request_type=[];
   $request_type=($Type_of_request->getDocument("Book_venue"));
   sleep(1);
@@ -75,14 +98,10 @@ if(isset($_POST["first_page_info"])){
               "AssociationClub_Name"=>$AssociationClub_Name
   ];
 
-  $Letter_info->createDocument($full_name,$docdata);
-
-  $latest_entry=[];
-  $latest_entry=($Letter_info->getDocument($full_name));
   sleep(1);
 
 
-  $latest_entry_json = json_encode($latest_entry);
+  $latest_entry_json = json_encode($docdata);
   $decoded_entry_json = json_decode($latest_entry_json);
 
   /**
@@ -159,23 +178,23 @@ if(isset($_POST["first_page_info"])){
   <body>
       <nav class="navbar navbar-light navbar-expand-md bg-light border rounded-0 shadow navigation-clean-button">
         <div class="container-fluid">
-        <a class="navbar-brand" data-aos="fade" href="#">ProjekFlow</a>
+        <a class="navbar-brand" data-aos="fade" href="createevent.php">ProjekFlow</a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav text-primary ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="createevent.php">Book</a></li>
                 </ul>
                 <span class="navbar-text actions">
-                    <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">log Out</button>
+                    <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">Log Out</button>
                 </span> <!-- double check on the logout() -->
             </div>
         </div>
     </nav>
+  <div>
 
-    <form action="" style="margin-top:100px;" method="POST">
+  </div>
+    <form action="" style="margin-top:100px;" target="_blank" method="POST">
             <div id ="Header" class="card">
         <div class="card-body">
             <div class="jumbotron jumbotron-fluid">
@@ -315,7 +334,7 @@ if(isset($_POST["first_page_info"])){
     <p id="body_caption">Type your association/club name.</p>
     <input type="text" class="form-control" id="AssociationClub_Name" name="AssociationClub_Name">
   </div>
-    <button target="_blank" id="first_page_info" name="first_page_info" type="submit" class="btn btn-primary">Submit</button>
+    <button name="venueButton" type="submit" class="btn btn-primary">Submit</button>
     </div>
 
   </form>

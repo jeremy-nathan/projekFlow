@@ -1,5 +1,20 @@
 <?php
 
+require_once './GFirestore.php';
+
+error_reporting(0);
+
+$event=new Firestore('event');
+
+session_start();
+
+if(isset($_POST["confirm"])){
+  $venue = [
+      ["path"=>"Venue","value"=>$_POST["confirm"]]
+    ];
+  $event->updateDocument($_SESSION['name'],$venue);
+
+}
 
  ?>
 
@@ -37,14 +52,12 @@
   <body>
       <nav class="navbar navbar-light navbar-expand-md bg-light border rounded-0 shadow navigation-clean-button">
         <div class="container-fluid">
-        <a class="navbar-brand" data-aos="fade" href="#">ProjekFlow</a>
+        <a class="navbar-brand" data-aos="fade" href="createevent.php">ProjekFlow</a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav text-primary ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Book</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#">Profile</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="createevent.php">Book</a></li>
                 </ul>
                 <span class="navbar-text actions">
                     <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">Log Out</button>
@@ -75,7 +88,7 @@
         <div id ="Slide-one" class="carousel-caption d-none d-md-block">
       <h1>Book A Venue</h1>
       <p>Book your desired venue that is conducive and suitable for your specific needs.</p>
-        <button onclick="window.location.href='Form_first_page_venue.php'" name="button_book_venue" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+        <button onclick="window.open('Form_first_page_venue.php','_blank')" name="button_book_venue" type="button" class="btn btn-primary btn-lg">Create Letter</button>
       </div>
 
     </div>
@@ -86,7 +99,7 @@
       <div id="Slide-two" class ="carousel-caption d-none d-md-block">
       <h1>Event Approval</h1>
       <p>Got an event that needs approval from authorities and staff of Univeristy of Malaya?</p>
-      <button onclick="window.location.href='Form_first_page_event.php'" formaction="/Form_first_page.php" name ="button_event_approval" id="button-two" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+      <button onclick="window.open('Form_first_page_event.php','_blank')" name ="button_event_approval" id="button-two" type="button" class="btn btn-primary btn-lg">Create Letter</button>
     </div>
 
     </div>
@@ -96,7 +109,7 @@
       <div id="Slide-three" class = "carousel-caption d-none d-md-block">
         <h1>Request Additional Equipment</h1>
         <p>Request equipment that is not readily available in the venue or needed for other important activities</p>
-          <button onclick="window.location.href='Form_first_page_equipment.php'" formaction="/Form_first_page.php" name="button_request_equipment" id="button-three" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+          <button onclick="window.open('Form_first_page_equipment.php','_blank')" name="button_request_equipment" id="button-three" type="button" class="btn btn-primary btn-lg">Create Letter</button>
     </div>
       </div>
 
@@ -105,7 +118,7 @@
         <div id="Slide-four" class = "carousel-caption d-none d-md-block">
           <h1>Order Catering Services</h1>
           <p>Order food for your guests/participants from the many cafterias available throughout the campus</p>
-            <button onclick="window.location.href='Form_first_page_catering.php'" formaction="/Form_first_page.php" name ="button_catering_services" id="button-four" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+            <button onclick="window.open('Form_first_page_catering.php','_blank')" name ="button_catering_services" id="button-four" type="button" class="btn btn-primary btn-lg">Create Letter</button>
       </div>
         </div>
 
@@ -114,7 +127,7 @@
           <div id="Slide-five" class = "carousel-caption d-none d-md-block">
             <h1>Request Security Protection</h1>
             <p>Outdoor activities/events especially require police security to ensure everyone's safety</p>
-              <button onclick="window.location.href='Form_first_page_security.php'" name="button_request_security" id="button-five" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+              <button onclick="window.open('Form_first_page_security.php','_blank')" name="button_request_security" id="button-five" type="button" class="btn btn-primary btn-lg">Create Letter</button>
         </div>
           </div>
 
