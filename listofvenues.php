@@ -106,18 +106,18 @@ else{
 <body class="text-primary">
     <nav class="navbar navbar-light navbar-expand-md bg-light border rounded-0 shadow navigation-clean-button">
         <div class="container-fluid">
-        <a class="navbar-brand" data-aos="fade" href="createevent.php>ProjekFlow</a>
+        <a class="navbar-brand" data-aos="fade" href="createevent.php">ProjekFlow</a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav text-primary ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="createevent">Book</a></li>
-                </ul
-                <span class="navbar-text actions"> 
-                    <button class="btn btn-light action-button" onclick="mainApp.logOut()" role="button">Log Out</button>
-                </span>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="createevent.php">Book</a></li>
+                </ul>
+                <span class="navbar-text actions">
+                    <button class="btn btn-light action-button" role="button" onclick="mainApp.logOut()">Log Out</button>
+                </span> <!-- double check on the logout() -->
             </div>
-        </div>  <!-- the issue is the index.html#doesnt work and the login page still glitchy-->
+        </div>
     </nav>
     <div class="container" style="margin-top: 100px;">
         <h1 class="text-center text-dark">Filter</h1>
