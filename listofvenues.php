@@ -1,6 +1,6 @@
 <?php
 
-ini_set('display_errors', 1);
+// ini_set('display_errors', 1);
 
 // Starts the session to store data in global variables.
 // These global variables can be called in other pages too. 
