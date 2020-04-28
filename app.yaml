@@ -1,3 +1,2 @@
 runtime: php55
 env: standard
-entrypoint: index.php
