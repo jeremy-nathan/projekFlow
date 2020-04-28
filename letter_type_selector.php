@@ -1,6 +1,9 @@
 <?php /*dbnbntrnsrysdbafbndtnaten*/
     require_once './GFirestore.php';
 
+    session_start();
+    $event = new Firestore("event");
+
     $key = '13a5916221a4c40a6c00180f4e68877b769a8d86c0aa4ee0e5f4758ae3ebb4f4';
     $secret = '46e9868bbce2655a0bf59d66f8abaebcf454aaddf652341310eac297054ff8f0';
     $workspace = 'kannakanna56@yahoo.com.my';
@@ -18,6 +21,14 @@
     $client = new \GuzzleHttp\Client([
         'base_uri' => 'https://us1.pdfgeneratorapi.com/api/v3/'
     ]);
+
+    if(isset($_POST["confirm"])){
+    $venue = [
+        ["path"=>"Venue","value"=>$_POST["confirm"]]
+      ];
+    $event->updateDocument($_SESSION['name'],$venue);
+    echo "test";
+  }
 
     if(isset($_POST["button_book_venue"])){
 

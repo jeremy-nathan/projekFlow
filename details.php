@@ -2,6 +2,7 @@
 
 require_once './GFirestore.php';
 
+session_start();
 // Disable notices. No errors will be displayed on the web page
 error_reporting(0);
 
@@ -13,7 +14,6 @@ $event=new Firestore('event');
 
 $data=[];
 
-// Checks if event has been created
 
 
 if(isset($_GET["book"])){
@@ -23,8 +23,10 @@ if(isset($_GET["book"])){
     $result=[];
 
     $result=$venue->getWhere("Name","==",$venueName);
-    header('Location: letter_type_selector.php');
+    // header('Location: letter_type_selector.php');
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +110,7 @@ if(isset($_GET["book"])){
                 </div>
               </div>
               <div class="row mt-5 mb-5 justify-content-center">
-                <form action="typeofrequests.php" method="POST">
+                <form action="letter_type_selector.php" method="POST">
                   <button name="confirm" value="'.$venueName.'" type="submit" class="btn mr-3 btn-primary btn-lg">Confirm</button>
                   <button type="button" onClick="javascript:history.go(-1)" class="btn btn-secondary btn-lg">Back</button>
                 </form>
