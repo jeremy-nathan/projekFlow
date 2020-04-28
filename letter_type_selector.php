@@ -22,12 +22,12 @@
         'base_uri' => 'https://us1.pdfgeneratorapi.com/api/v3/'
     ]);
 
+    // Do not tamper with this. U can edit everything else but not this.
     if(isset($_POST["confirm"])){
     $venue = [
         ["path"=>"Venue","value"=>$_POST["confirm"]]
       ];
     $event->updateDocument($_SESSION['name'],$venue);
-    echo "test";
   }
 
     if(isset($_POST["button_book_venue"])){
