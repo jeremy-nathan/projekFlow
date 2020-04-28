@@ -1,207 +1,207 @@
-<?php /*dbnbntrnsrysdbafbndtnaten*/
-    require_once './GFirestore.php';
-
-    $key = '13a5916221a4c40a6c00180f4e68877b769a8d86c0aa4ee0e5f4758ae3ebb4f4';
-    $secret = '46e9868bbce2655a0bf59d66f8abaebcf454aaddf652341310eac297054ff8f0';
-    $workspace = 'kannakanna56@yahoo.com.my';
-    $resource = 'templates/95587/output';
-    $data = [
-      'key' => $key,
-      'resource' => $resource,
-      'workspace' => $workspace
-    ];
-
-    ksort($data);
-
-    $signature = hash_hmac('sha256', implode('', $data), $secret);
-
-    $client = new \GuzzleHttp\Client([
-        'base_uri' => 'https://us1.pdfgeneratorapi.com/api/v3/'
-    ]);
-
-    if(isset($_POST["button_book_venue"])){
-
-      $request_type=[];
-      $request_type=($Type_of_request->getDocument("Book_venue"));
-      sleep(1);
-      $request_type_json = json_encode($request_type);
-
-      $response = $client->request('POST', $resource, [
-        'body' => $request_type_json,
-        'query' => [
-          'format' => 'pdf',
-          'output' => 'url'
-        ],
-        'headers' => [
-          'X-Auth-Key' => $key,
-          'X-Auth-Workspace' => $workspace,
-          'X-Auth-Signature' => $signature,
-          'Accept' => 'application/json',
-          'Content-Type' => 'application/json; charset=utf-8',
-        ]
-      ]);
-        /**
-         * Authentication params sent in query string
-         */
-        $response = $client->request('POST', $resource, [
-          'body' => $request_type_json,
-          'query' => [
-            'key' => $key,
-            'workspace' => $workspace,
-            'signature' => $signature,
-            'format' => 'pdf',
-            'output' => 'url'
-          ]
-        ]);
-          header('Location: Form_first_page.php');
-
-    }
-
-    if(isset($_POST["button_event_approval"])){
-
-      $request_type=[];
-      $request_type=($Type_of_request->getDocument("Event_approval"));
-      sleep(1);
-      $request_type_json = json_encode($request_type);
-
-      $response = $client->request('POST', $resource, [
-        'body' => $request_type_json,
-        'query' => [
-          'format' => 'pdf',
-          'output' => 'url'
-        ],
-        'headers' => [
-          'X-Auth-Key' => $key,
-          'X-Auth-Workspace' => $workspace,
-          'X-Auth-Signature' => $signature,
-          'Accept' => 'application/json',
-          'Content-Type' => 'application/json; charset=utf-8',
-        ]
-      ]);
-        /**
-         * Authentication params sent in query string
-         */
-        $response = $client->request('POST', $resource, [
-          'body' => $request_type_json,
-          'query' => [
-            'key' => $key,
-            'workspace' => $workspace,
-            'signature' => $signature,
-            'format' => 'pdf',
-            'output' => 'url'
-          ]
-        ]);
-          header('Location: Form_first_page.php');
-
-    }
-
-    if(isset($_POST["button_request_equipment"])){
-      $request_type=[];
-      $request_type=($Type_of_request->getDocument("Equipment_request"));
-      sleep(1);
-      $request_type_json = json_encode($request_type);
-
-      $response = $client->request('POST', $resource, [
-        'body' => $request_type_json,
-        'query' => [
-          'format' => 'pdf',
-          'output' => 'url'
-        ],
-        'headers' => [
-          'X-Auth-Key' => $key,
-          'X-Auth-Workspace' => $workspace,
-          'X-Auth-Signature' => $signature,
-          'Accept' => 'application/json',
-          'Content-Type' => 'application/json; charset=utf-8',
-        ]
-      ]);
-        /**
-         * Authentication params sent in query string
-         */
-        $response = $client->request('POST', $resource, [
-          'body' => $request_type_json,
-          'query' => [
-            'key' => $key,
-            'workspace' => $workspace,
-            'signature' => $signature,
-            'format' => 'pdf',
-            'output' => 'url'
-          ]
-        ]);
-          header('Location: Form_first_page.php');
-    }
-
-    if(isset($_POST["button_catering_services"])){
-      $request_type=[];
-      $request_type=($Type_of_request->getDocument("Catering_service"));
-      sleep(1);
-      $request_type_json = json_encode($request_type);
-
-      $response = $client->request('POST', $resource, [
-        'body' => $request_type_json,
-        'query' => [
-          'format' => 'pdf',
-          'output' => 'url'
-        ],
-        'headers' => [
-          'X-Auth-Key' => $key,
-          'X-Auth-Workspace' => $workspace,
-          'X-Auth-Signature' => $signature,
-          'Accept' => 'application/json',
-          'Content-Type' => 'application/json; charset=utf-8',
-        ]
-      ]);
-        /**
-         * Authentication params sent in query string
-         */
-        $response = $client->request('POST', $resource, [
-          'body' => $request_type_json,
-          'query' => [
-            'key' => $key,
-            'workspace' => $workspace,
-            'signature' => $signature,
-            'format' => 'pdf',
-            'output' => 'url'
-          ]
-        ]);
-        header('Location: Form_first_page.php');
-    }
-
-    if(isset($_POST["button_request_security"])){
-      $request_type=[];
-      $request_type=($Type_of_request->getDocument("Security_protection"));
-      sleep(1);
-      $request_type_json = json_encode($request_type);
-
-      $response = $client->request('POST', $resource, [
-        'body' => $request_type_json,
-        'query' => [
-          'format' => 'pdf',
-          'output' => 'url'
-        ],
-        'headers' => [
-          'X-Auth-Key' => $key,
-          'X-Auth-Workspace' => $workspace,
-          'X-Auth-Signature' => $signature,
-          'Accept' => 'application/json',
-          'Content-Type' => 'application/json; charset=utf-8',
-        ]
-      ]);
-        /**
-         * Authentication params sent in query string
-         */
-        $response = $client->request('POST', $resource, [
-          'body' => $request_type_json,
-          'query' => [
-            'key' => $key,
-            'workspace' => $workspace,
-            'signature' => $signature,
-            'format' => 'pdf',
-            'output' => 'url'
-          ]
-        ]);
-          header('Location: Form_first_page.php');
-    }
+<?php
+    //  require_once './GFirestore.php';
+    //
+    //  $key = '13a5916221a4c40a6c00180f4e68877b769a8d86c0aa4ee0e5f4758ae3ebb4f4';
+    //  $secret = '46e9868bbce2655a0bf59d66f8abaebcf454aaddf652341310eac297054ff8f0';
+    //  $workspace = 'kannakanna56@yahoo.com.my';
+    // $resource = 'templates/95587/output';
+    //  $data = [
+    //    'key' => $key,
+    //    'resource' => $resource,
+    //    'workspace' => $workspace
+    //  ];
+    //
+    //  ksort($data);
+    //
+    //  $signature = hash_hmac('sha256', implode('', $data), $secret);
+    //
+    //  $client = new \GuzzleHttp\Client([
+    //      'base_uri' => 'https://us1.pdfgeneratorapi.com/api/v3/'
+    //  ]);
+    //
+    //  if(isset($_POST["button_book_venue"])){
+    //
+    //    $request_type=[];
+    //    $request_type=($Type_of_request->getDocument("Book_venue"));
+    //    sleep(1);
+    //    $request_type_json = json_encode($request_type);
+    //
+    //    $response = $client->request('POST', $resource, [
+    //      'body' => $request_type_json,
+    //      'query' => [
+    //        'format' => 'pdf',
+    //        'output' => 'url'
+    //      ],
+    //      'headers' => [
+    //        'X-Auth-Key' => $key,
+    //        'X-Auth-Workspace' => $workspace,
+    //        'X-Auth-Signature' => $signature,
+    //        'Accept' => 'application/json',
+    //        'Content-Type' => 'application/json; charset=utf-8',
+    //      ]
+    //    ]);
+    //      /**
+    //       * Authentication params sent in query string
+    //       */
+    //      $response = $client->request('POST', $resource, [
+    //        'body' => $request_type_json,
+    //    'query' => [
+    //          'key' => $key,
+    //          'workspace' => $workspace,
+    //          'signature' => $signature,
+    //          'format' => 'pdf',
+    //          'output' => 'url'
+    //        ]
+    //      ]);
+    //        // header('Location: Form_first_page.php');
+    //
+    //  }
+    //
+    //  if(isset($_POST["button_event_approval"])){
+    //
+    //    $request_type=[];
+    //    $request_type=($Type_of_request->getDocument("Event_approval"));
+    //    sleep(1);
+    //    $request_type_json = json_encode($request_type);
+    //
+    //    $response = $client->request('POST', $resource, [
+    //      'body' => $request_type_json,
+    //      'query' => [
+    //        'format' => 'pdf',
+    //        'output' => 'url'
+    //      ],
+    //      'headers' => [
+    //        'X-Auth-Key' => $key,
+    //      'X-Auth-Workspace' => $workspace,
+    //      'X-Auth-Signature' => $signature,
+    //        'Accept' => 'application/json',
+    //        'Content-Type' => 'application/json; charset=utf-8',
+    //    ]
+    //    ]);
+    //      /**
+    //     * Authentication params sent in query string
+    //     */
+    //      $response = $client->request('POST', $resource, [
+    //        'body' => $request_type_json,
+    //      'query' => [
+    //          'key' => $key,
+    //          'workspace' => $workspace,
+    //          'signature' => $signature,
+    //          'format' => 'pdf',
+    //          'output' => 'url'
+    //        ]
+    //      ]);
+    //        // header('Location: Form_first_page.php');
+    //
+    //  }
+    //
+    //  if(isset($_POST["button_request_equipment"])){
+    //    $request_type=[];
+    //    $request_type=($Type_of_request->getDocument("Equipment_request"));
+    //    sleep(1);
+    //    $request_type_json = json_encode($request_type);
+    //
+    //    $response = $client->request('POST', $resource, [
+    //      'body' => $request_type_json,
+    //      'query' => [
+    //        'format' => 'pdf',
+    //        'output' => 'url'
+    //      ],
+    //      'headers' => [
+    //        'X-Auth-Key' => $key,
+    //        'X-Auth-Workspace' => $workspace,
+    //        'X-Auth-Signature' => $signature,
+    //        'Accept' => 'application/json',
+    //        'Content-Type' => 'application/json; charset=utf-8',
+    //      ]
+    //    ]);
+    //      /**
+    //       * Authentication params sent in query string
+    //       */
+    //      $response = $client->request('POST', $resource, [
+    //        'body' => $request_type_json,
+    //        'query' => [
+    //          'key' => $key,
+    //          'workspace' => $workspace,
+    //          'signature' => $signature,
+    //          'format' => 'pdf',
+    //          'output' => 'url'
+    //        ]
+    //      ]);
+    //        // header('Location: Form_first_page.php');
+    //  }
+    //
+    //  if(isset($_POST["button_catering_services"])){
+    //    $request_type=[];
+    //    $request_type=($Type_of_request->getDocument("Catering_service"));
+    //    sleep(1);
+    //    $request_type_json = json_encode($request_type);
+    //
+    //    $response = $client->request('POST', $resource, [
+    //      'body' => $request_type_json,
+    //      'query' => [
+    //        'format' => 'pdf',
+    //        'output' => 'url'
+    //      ],
+    //      'headers' => [
+    //        'X-Auth-Key' => $key,
+    //        'X-Auth-Workspace' => $workspace,
+    //        'X-Auth-Signature' => $signature,
+    //        'Accept' => 'application/json',
+    //        'Content-Type' => 'application/json; charset=utf-8',
+    //      ]
+    //    ]);
+    //      /**
+    //       * Authentication params sent in query string
+    //       */
+    //      $response = $client->request('POST', $resource, [
+    //        'body' => $request_type_json,
+    //        'query' => [
+    //          'key' => $key,
+    //          'workspace' => $workspace,
+    //        'signature' => $signature,
+    //          'format' => 'pdf',
+    //          'output' => 'url'
+    //        ]
+    //      ]);
+    //      // header('Location: Form_first_page.php');
+    //  }
+    //
+    //  if(isset($_POST["button_request_security"])){
+    //    $request_type=[];
+    //    $request_type=($Type_of_request->getDocument("Security_protection"));
+    //    sleep(1);
+    //    $request_type_json = json_encode($request_type);
+    //
+    //    $response = $client->request('POST', $resource, [
+    //      'body' => $request_type_json,
+    //      'query' => [
+    //        'format' => 'pdf',
+    //        'output' => 'url'
+    //      ],
+    //      'headers' => [
+    //        'X-Auth-Key' => $key,
+    //        'X-Auth-Workspace' => $workspace,
+    //        'X-Auth-Signature' => $signature,
+    //        'Accept' => 'application/json',
+    //        'Content-Type' => 'application/json; charset=utf-8',
+    //      ]
+    //    ]);
+    //      /**
+    //       * Authentication params sent in query string
+    //       */
+    //      $response = $client->request('POST', $resource, [
+    //        'body' => $request_type_json,
+    //        'query' => [
+    //          'key' => $key,
+    //          'workspace' => $workspace,
+    //          'signature' => $signature,
+    //          'format' => 'pdf',
+    //        'output' => 'url'
+    //        ]
+    //      ]);
+    //       // header('Location: Form_first_page.php');
+    //  }
  ?>
 
 
@@ -270,14 +270,14 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
   </ol>
 
-
+<form class="" action="Form_first_page.php" method="post">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="assets\img\Slide_1_img.jpg" class="d-block w-100" alt="first slide">
         <div id ="Slide-one" class="carousel-caption d-none d-md-block">
       <h1>Book A Venue</h1>
       <p>Book your desired venue that is conducive and suitable for your specific needs.</p>
-        <button name="button_book_venue" id="button-one" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+        <button onclick="window.location.href='Form_first_page_venue.php'" name="button_book_venue" type="button" class="btn btn-primary btn-lg">Create Letter</button>
       </div>
 
     </div>
@@ -288,7 +288,7 @@
       <div id="Slide-two" class ="carousel-caption d-none d-md-block">
       <h1>Event Approval</h1>
       <p>Got an event that needs approval from authorities and staff of Univeristy of Malaya?</p>
-      <button name ="button_event_approval" id="button-two" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+      <button onclick="window.location.href='Form_first_page_event.php'" formaction="/Form_first_page.php" name ="button_event_approval" id="button-two" type="button" class="btn btn-primary btn-lg">Create Letter</button>
     </div>
 
     </div>
@@ -298,7 +298,7 @@
       <div id="Slide-three" class = "carousel-caption d-none d-md-block">
         <h1>Request Additional Equipment</h1>
         <p>Request equipment that is not readily available in the venue or needed for other important activities</p>
-          <button name="button_request_equipment" id="button-three" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+          <button onclick="window.location.href='Form_first_page_equipment.php'" formaction="/Form_first_page.php" name="button_request_equipment" id="button-three" type="button" class="btn btn-primary btn-lg">Create Letter</button>
     </div>
       </div>
 
@@ -307,7 +307,7 @@
         <div id="Slide-four" class = "carousel-caption d-none d-md-block">
           <h1>Order Catering Services</h1>
           <p>Order food for your guests/participants from the many cafterias available throughout the campus</p>
-            <button name ="button_catering_services" id="button-four" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+            <button onclick="window.location.href='Form_first_page_catering.php'" formaction="/Form_first_page.php" name ="button_catering_services" id="button-four" type="button" class="btn btn-primary btn-lg">Create Letter</button>
       </div>
         </div>
 
@@ -316,12 +316,12 @@
           <div id="Slide-five" class = "carousel-caption d-none d-md-block">
             <h1>Request Security Protection</h1>
             <p>Outdoor activities/events especially require police security to ensure everyone's safety</p>
-              <button name="button_request_security" id="button-five" type="button" class="btn btn-primary btn-lg">Create Letter</button>
+              <button onclick="window.location.href='Form_first_page_security.php'" name="button_request_security" id="button-five" type="button" class="btn btn-primary btn-lg">Create Letter</button>
         </div>
           </div>
 
   </div>
-
+</form>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
