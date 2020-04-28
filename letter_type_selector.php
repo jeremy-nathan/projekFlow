@@ -53,7 +53,7 @@
             'output' => 'url'
           ]
         ]);
-          header('Location: '.Form_first_page.php);
+          header('Location: Form_first_page.php');
 
     };
 
@@ -91,7 +91,7 @@
             'output' => 'url'
           ]
         ]);
-          header('Location: '.Form_first_page.php);
+          header('Location: Form_first_page.php');
 
     };
 
@@ -128,7 +128,7 @@
             'output' => 'url'
           ]
         ]);
-          header('Location: '.Form_first_page.php);
+          header('Location: Form_first_page.php');
     };
 
     if(isset($_POST["button_catering_services"])){
@@ -164,7 +164,7 @@
             'output' => 'url'
           ]
         ]);
-          header('Location: '.Form_first_page.php);
+        header('Location: Form_first_page.php');
     };
 
     if(isset($_POST["button_request_security"])){
@@ -200,7 +200,7 @@
             'output' => 'url'
           ]
         ]);
-          header('Location: '.Form_first_page.php);
+          header('Location: Form_first_page.php');
     };
  ?>
 
@@ -260,12 +260,6 @@
   </div>
   <hr class="colored" />
 
-
-  <div style="margin-top:100px;" class="header">
-    <img src="assets\img\um-logo.png_header.png" alt="um logo">
-    <h1 class="header-title">Letter Type Selector</h1>
-  </div>
-  <hr class="colored" />
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
