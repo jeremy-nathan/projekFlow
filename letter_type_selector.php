@@ -227,7 +227,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
       <!-- CSS StyleSheets -->
-    <link rel="stylesheet" href="C:\Users\user\OneDrive\Desktop\Google Competition\styles.css">
+    <link rel="stylesheet" href="assets\css\letter_type_styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
       <!-- BootStrap Scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
