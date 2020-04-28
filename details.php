@@ -23,6 +23,7 @@ if(isset($_GET["book"])){
     $result=[];
 
     $result=$venue->getWhere("Name","==",$venueName);
+    header('Location: '.letter_type_selector.php);
 }
 ?>
 
