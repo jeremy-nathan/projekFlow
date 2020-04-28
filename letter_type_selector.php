@@ -55,7 +55,7 @@
         ]);
           header('Location: Form_first_page.php');
 
-    };
+    }
 
     if(isset($_POST["button_event_approval"])){
 
@@ -93,7 +93,7 @@
         ]);
           header('Location: Form_first_page.php');
 
-    };
+    }
 
     if(isset($_POST["button_request_equipment"])){
       $request_type=[];
@@ -129,7 +129,7 @@
           ]
         ]);
           header('Location: Form_first_page.php');
-    };
+    }
 
     if(isset($_POST["button_catering_services"])){
       $request_type=[];
@@ -165,7 +165,7 @@
           ]
         ]);
         header('Location: Form_first_page.php');
-    };
+    }
 
     if(isset($_POST["button_request_security"])){
       $request_type=[];
@@ -201,7 +201,7 @@
           ]
         ]);
           header('Location: Form_first_page.php');
-    };
+    }
  ?>
 
 
