@@ -1,9 +1,9 @@
 <?php
-// phpinfo();
+phpinfo();
 ?>
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+<!-- </head>
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md bg-light border rounded-0 shadow navigation-clean-button">
@@ -151,20 +151,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-
-<meta name="viewport" content="width-device-width, initial-scale=1">
+ -->
+<!-- <meta name="viewport" content="width-device-width, initial-scale=1">
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
   intent="WELCOME"
   chat-title="Ask us anything!"
   agent-id="71489671-749b-48f8-839a-af63e12e262e"
   language-code="en"
-></df-messenger>
+></df-messenger> -->
 
-  <script src="assets/js/fireBase.js"></script>
+  <!-- <script src="assets/js/fireBase.js"></script>
   <script src="assets/js/index.js"></script>
   <script src="assets/js/other.js"></script>
 
 </body>
 
-</html>
+</html> -->
