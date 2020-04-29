@@ -1,10 +1,14 @@
 <?php
 
+error_reporting(0);
+echo extension_loaded("grpc");
+
 // Starts the session to store data in global variables.
 // These global variables can be called in other pages too. 
 session_start();
 
 require_once './GFirestore.php';
+
 
 // Disable notices. No errors will be displayed on the web page
 // error_reporting(0);
