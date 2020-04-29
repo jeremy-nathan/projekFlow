@@ -3,6 +3,7 @@
         "google/cloud": "^0.127.0",
         "google/cloud-firestore": "^1.11",
         "guzzlehttp/guzzle": "^6.5",
-        "grpc/grpc": "^1.27"
+        "grpc/grpc": "^1.27",
+        "google/grpc-gcp": "^0.1.4"
     }
 }
