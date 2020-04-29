@@ -1,0 +1,7 @@
+runtime: php73
+env: standard
+
+handlers:
+  - url: /assets
+    static_dir: assets
+

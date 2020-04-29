@@ -161,9 +161,9 @@
   language-code="en"
 ></df-messenger>
 
-  <script src="assets/js/fireBase.js"></script>
+  <!-- <script src="assets/js/fireBase.js"></script>
   <script src="assets/js/index.js"></script>
-  <script src="assets/js/other.js"></script>
+  <script src="assets/js/other.js"></script> -->
 
 </body>
 

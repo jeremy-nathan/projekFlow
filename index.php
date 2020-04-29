@@ -37,6 +37,6 @@
 
     <script src="assets/js/fireBase.js"></script>
     <script src="assets/js/auth.js"></script>
-    <!-- <script src="assets/js/other.js"></script> -->
+    <script src="assets/js/other.js"></script>
   </body>
 </html>
