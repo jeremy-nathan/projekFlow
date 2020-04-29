@@ -31,3 +31,6 @@ public  function  __construct(string  $collection){
 	$this->name=$collection;
 	}
 ```
+ 8. Open `xampp-control.exe` and click the 'Start' button in 'Apache' section.
+ 9. Open a browser (preferably Google Chrome). In the URL bar, type 'localhost/***your-folder-name***' and press 'Enter'.
+ 10. Done  
