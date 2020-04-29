@@ -1,9 +1,9 @@
 <?php
-phpinfo();
+// phpinfo();
 ?>
 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -12,13 +12,13 @@ phpinfo();
     <title>projekflow</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
         <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
     
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
 
@@ -167,4 +167,4 @@ phpinfo();
 
 </body>
 
-</html> -->
+</html>
