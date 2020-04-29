@@ -268,6 +268,6 @@ trait ClientTrait
      */
     protected function isGrpcLoaded()
     {
-        return true;
+        return extension_loaded('grpc');
     }
 }
