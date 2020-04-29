@@ -17,8 +17,8 @@
  3. Open a terminal of your choice. Ensure that the path is pointing to the created folder.
  4. Install required packages by the running the following commands below
 ```
-composer require "google/cloud"
-composer require "grpc/grpc:^v1.27.0"
+composer install
+composer update
 ```
  5. Go to [firebase console](firebase.google.com) and create a project. Copy the project ID.
  6. Open 'GFirestore.php'.
