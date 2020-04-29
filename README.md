@@ -20,10 +20,10 @@
 composer install
 composer update
 ```
- 5. Go to [firebase console](firebase.google.com) and create a project. Copy the project ID.
+ 5. Go to [firebase](firebase.google.com) and create a project. Copy the project ID.
  6. Open 'GFirestore.php'.
  7. Replace <PROJECT_ID> with the project ID of your newly-created project in the snippet below.
- ```php
+ ```js
 public  function  __construct(string  $collection){
 	$this->db =  new  FirestoreClient([
 				'projectId'=>  '<PROJECT_ID>'
@@ -31,6 +31,23 @@ public  function  __construct(string  $collection){
 	$this->name=$collection;
 	}
 ```
- 8. Open `xampp-control.exe` and click the 'Start' button in 'Apache' section.
- 9. Open a browser (preferably Google Chrome). In the URL bar, type 'localhost/***your-folder-name***' and press 'Enter'.
- 10. Done  
+ 8. Go to your created project at [firebase console](https://console.firebase.google.com/u/0/) and click 'Add app' and select 'Web'.
+ 9. Enter your web app's name and click 'Register', then copy the contents of firebaseConfig. 
+```js
+var firebaseConfig =  {  
+apiKey:  "##################",  
+authDomain:  "##################",  
+databaseURL:  "#############",  
+projectId:  "##################",  
+storageBucket:  "############",  
+messagingSenderId:  "#######################",  
+appId:  "################",  
+measurementId:  "#####################"  
+};
+```
+ 
+ 10. Open `assets/js/fireBase.js` and replace the current contents of firebaseConfig with one you copied earlier. 
+
+ 11. Open `xampp-control.exe` and click the 'Start' button in 'Apache' section.
+ 12. Open a browser (preferably Google Chrome). In the URL bar, type 'localhost/***your-folder-name***' and press 'Enter'.
+ 13. Done  
