@@ -1,4 +1,4 @@
-# projekFlow
+# ProjekFlow
 
 ## Solution Challenge Product
 
