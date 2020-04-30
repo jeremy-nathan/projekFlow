@@ -1,7 +1,6 @@
 <?php
 
 error_reporting(0);
-echo extension_loaded("grpc");
 
 // Starts the session to store data in global variables.
 // These global variables can be called in other pages too. 
