@@ -5,7 +5,7 @@
         "guzzlehttp/guzzle": "^6.5",
         "grpc/grpc": "^1.27",
         "google/grpc-gcp": "^0.1.4",
-        "ext-grpc": "*",
+        // "ext-grpc": "*",
         "google/proto-client": "^0.40.0"
     }
 }
