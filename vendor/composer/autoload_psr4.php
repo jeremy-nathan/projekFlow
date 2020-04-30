@@ -64,7 +64,7 @@ return array(
     'Google\\CRC32\\' => array($vendorDir . '/google/crc32/src'),
     'Google\\Auth\\' => array($vendorDir . '/google/auth/src'),
     'Google\\ApiCore\\' => array($vendorDir . '/google/gax/src'),
-    'Google\\' => array($vendorDir . '/google/common-protos/src', $vendorDir . '/google/proto-client/src/Google'),
+    'Google\\' => array($vendorDir . '/google/common-protos/src'),
     'GPBMetadata\\Google\\Spanner\\' => array($vendorDir . '/google/cloud/Spanner/metadata'),
     'GPBMetadata\\Google\\Pubsub\\' => array($vendorDir . '/google/cloud/PubSub/metadata'),
     'GPBMetadata\\Google\\Protobuf\\' => array($vendorDir . '/google/protobuf/src/GPBMetadata/Google/Protobuf'),
@@ -104,7 +104,6 @@ return array(
     'GPBMetadata\\Google\\Cloud\\Asset\\' => array($vendorDir . '/google/cloud/Asset/metadata'),
     'GPBMetadata\\Google\\Bigtable\\' => array($vendorDir . '/google/cloud/Bigtable/metadata'),
     'GPBMetadata\\Google\\' => array($vendorDir . '/google/cloud/CommonProtos/metadata', $vendorDir . '/google/common-protos/metadata', $vendorDir . '/google/gax/metadata'),
-    'GPBMetadata\\' => array($vendorDir . '/google/proto-client/src/GPBMetadata'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
     '' => array($vendorDir . '/google/grpc-gcp/src/generated'),
 );

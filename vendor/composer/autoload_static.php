@@ -131,7 +131,6 @@ class ComposerStaticInitc9b1aaf3a9cd2f78c43f08beeb1f46ec
             'GPBMetadata\\Google\\Cloud\\Asset\\' => 31,
             'GPBMetadata\\Google\\Bigtable\\' => 28,
             'GPBMetadata\\Google\\' => 19,
-            'GPBMetadata\\' => 12,
         ),
         'F' => 
         array (
@@ -376,7 +375,6 @@ class ComposerStaticInitc9b1aaf3a9cd2f78c43f08beeb1f46ec
         'Google\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/common-protos/src',
-            1 => __DIR__ . '/..' . '/google/proto-client/src/Google',
         ),
         'GPBMetadata\\Google\\Spanner\\' => 
         array (
@@ -535,10 +533,6 @@ class ComposerStaticInitc9b1aaf3a9cd2f78c43f08beeb1f46ec
             0 => __DIR__ . '/..' . '/google/cloud/CommonProtos/metadata',
             1 => __DIR__ . '/..' . '/google/common-protos/metadata',
             2 => __DIR__ . '/..' . '/google/gax/metadata',
-        ),
-        'GPBMetadata\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/google/proto-client/src/GPBMetadata',
         ),
         'Firebase\\JWT\\' => 
         array (

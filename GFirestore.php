@@ -11,7 +11,7 @@ class Firestore{
     
     public function __construct(string $collection){
         $this->db = new FirestoreClient([
-            'projectId'=> 'fir-php-4bdd0'
+            'projectId'=> 'PROJECT-ID'
         ]);
         $this->name=$collection;
     }
